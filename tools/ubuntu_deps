@@ -1,0 +1,13 @@
+clang,dpkg -s
+g++,dpkg -s
+make,dpkg -s
+cmake,dpkg -s
+ccache,dpkg -s
+libx11-dev,dpkg -s
+git,dpkg -s
+libboost-all-dev,dpkg -s
+libcurl4-gnutls-dev,dpkg -s
+libgmp-dev,dpkg -s
+libssl-dev,dpkg -s
+libusb-1.0-0-dev,dpkg -s
+pkg-config,dpkg -s

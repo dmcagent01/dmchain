@@ -1,0 +1,112 @@
+#!/bin/bash
+
+inform()
+{
+	echo ""
+	echo "submodule vender is not existed!"
+	echo "you can execute the given command to init and update it."
+	echo " \$ git submodule init"
+	echo " \$ git submodule update"
+	echo ""
+	exit 1
+}
+
+TIME_BEGIN=$(date +%s)
+export WORK_ROOT=`pwd`
+
+SOURCE_ROOT="`dirname \"$0\"`"
+SOURCE_ROOT="`( cd \"$SOURCE_ROOT\" && pwd )`"
+
+. ${SOURCE_ROOT}/vender/build_tools/scripts/inst_deps.sh
+
+args=$@
+
+for i in $@
+do
+	case $i in
+		i386|amd64|arm|arm64|armv6|mips|mips64|ppc|ppc64) BUILD_ARCH=$i
+			;;
+		linux|alpine|android) BUILD_OS=$i
+			args="${args/$BUILD_OS/}" 
+			;;
+	esac
+done
+
+if [[ $BUILD_OS ]]; then
+	if [[ "${BUILD_ARCH}" == "" ]]; then
+		BUILD_ARCH=amd64
+	fi
+
+	docker run -ti --rm -v ${SOURCE_ROOT}:/fibjs fibjs/${BUILD_OS}-build-env:${BUILD_ARCH}\
+		bash -c "cd /fibjs; usermod --login ${USER} fibjs; sudo -u ${USER} bash build ${args}"
+	exit $?
+fi
+
+TEMP_DIR=${SOURCE_ROOT}/out
+if [ ! -e "${TEMP_DIR}" ]; then
+	mkdir "${TEMP_DIR}"
+fi
+
+if [[ $CC == "" ]]; then
+	if [[ $OS == "Darwin" ]]; then
+		ensure_brew_packages "${WORK_ROOT}/tools/darwin_deps"
+	elif [[ $OS == "Linux" ]]; then
+		if [[ $NAME =~ "Ubuntu" ]] || [[ $NAME =~ "Debian" ]]; then
+			ensure_apt_packages "${WORK_ROOT}/tools/ubuntu_deps"
+		elif [[ $NAME =~ "CentOS" ]] || [[ $NAME =~ "Fedora" ]]; then
+			ensure_yum_packages "${WORK_ROOT}/tools/centos_deps"
+		fi
+	fi
+fi
+
+if [ -f "${SOURCE_ROOT}/vender/build" ]; then 
+	if [ -z $USE_VENDER_DIST ]; then
+		cd "${SOURCE_ROOT}/vender"
+		bash build "$@"
+		if [ $? != 0 ]; then
+			exit 1
+		fi
+	fi
+else
+	inform
+fi
+
+cd "${SOURCE_ROOT}/fibjs"
+bash build "$@"
+if [ $? != 0 ]; then
+	exit 1
+fi
+
+cd "${SOURCE_ROOT}/fibjs/program"
+bash build "$@"
+if [ $? != 0 ]; then
+	exit 1
+fi
+
+cd "${SOURCE_ROOT}/fibjs/installer"
+bash build "$@"
+if [ $? != 0 ]; then
+	exit 1
+fi
+
+bldred="\033[1m\033[31m"
+txtrst="\033[0m"
+TIME_END=$(($(date -u +%s) - $TIME_BEGIN))
+
+printf "\n\n"
+printf "\t${bldred} _______ _________ ______  _________ _______ ${txtrst}\n"
+printf "\t${bldred}(  ____ \\\\\\__   __/(  ___ \\ \\__    _/(  ____ \\\\${txtrst}\n"
+printf "\t${bldred}| (    \\/   ) (   | (   ) )   )  (  | (    \\/${txtrst}\n"
+printf "\t${bldred}| (__       | |   | (__/ /    |  |  | (_____ ${txtrst}\n"
+printf "\t${bldred}|  __)      | |   |  __ (     |  |  (_____  )${txtrst}\n"
+printf "\t${bldred}| (         | |   | (  \\ \\    |  |        ) |${txtrst}\n"
+printf "\t${bldred}| (_     ___) (___| (___) )/\\_)  )  /\\____) |${txtrst}\n"
+printf "\t${bldred}(__/     \\_______/(______/ \\____/   \\_______)${txtrst}\n"
+printf ""
+
+printf "\\n\\tFIBJS has been successfully built during  $(($TIME_END / 3600)):$(($TIME_END % 3600 / 60)):$(($TIME_END % 60))\\n\\n"
+
+printf "\\tFor more information:\\n\\n"
+printf "\\twebsite: http://fibjs.org\\n"
+printf "\\trepository: https://github.com/fibjs\\n"
+printf "\n\n"

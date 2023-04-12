@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.formatOnSave": true,
+    "[html]": {
+        "editor.formatOnSave": false
+    },
+    "[java]": {
+        "editor.formatOnSave": false
+    },
+    "files.associations": {
+        "*.idl": "java"
+    },
+    "clang-format.fallbackStyle": "WebKit"
+}

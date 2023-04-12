@@ -1,0 +1,16 @@
+/out
+/bin
+/temp
+*.sdf
+*.suo
+node_modules
+out
+
+/*.dmp
+
+.vs
+*.vcxproj.user
+
+idl/__snapshots__
+
+/.vscode/launch.json

@@ -1,0 +1,601 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="icon" type="image/png" href="../../../../../imgs/icon.png"><title>Module child_process - JavaScript sur Fibre</title><link href="../../../../../css/common.css" rel="stylesheet"><link href="../../../../../css/docs.css" rel="stylesheet"></head><body><div class="navbar navbar-default navbar-static-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Basculer la navigation</font></font></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="../../../../index.html"><img src="../../../../../imgs/logo-dark.png"></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right notranslate"><li><a href="../../../../index.html">HOME</a></li><li><a href="../../../guide/readme.md.html">GUIDE</a></li><li><a href="../readme.md.html">MODULE</a></li><li><a href="../../object/readme.md.html">OBJECT</a></li><li><a href="../../../awesome/readme.md.html">AWESOME</a></li><li><a href="../../../../../download/index.html">DOWNLOAD</a></li><li class="nav-item dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LANGUAGE</a><div class="dropdown-menu"><a href="../../../../../docs/manual/module/ifs/child_process.md.html">中文</a> <a href="../../../../../ca/docs/manual/module/ifs/child_process.md.html">Catalan</a> <a href="../../../../../de/docs/manual/module/ifs/child_process.md.html">Deutsch</a> <a href="../../../../../en/docs/manual/module/ifs/child_process.md.html">English</a> <a href="../../../../../es/docs/manual/module/ifs/child_process.md.html">Español</a> <a href="../../../../../fr/docs/manual/module/ifs/child_process.md.html">Français</a> <a href="../../../../../gl/docs/manual/module/ifs/child_process.md.html">Galego</a> <a href="../../../../../it/docs/manual/module/ifs/child_process.md.html">Italiano</a> <a href="../../../../../ru/docs/manual/module/ifs/child_process.md.html">Русский</a> <a href="../../../../../ja/docs/manual/module/ifs/child_process.md.html">日本語</a> <a href="../../../../../ko/docs/manual/module/ifs/child_process.md.html">한국어</a> <a href="../../../../../zh-tw/docs/manual/module/ifs/child_process.md.html">繁體中文</a></div></li></ul></div></div></div><div class="band"><div class="container"><span class="group"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Module de base du module</font></font></span><div class="search"><span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="text" class="searchbox ds-input" placeholder="Chercher" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="entrée de recherche" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Avenir, &quot;Segoe UI&quot;, Arial, &quot;Hiragino Sans GB&quot;, 冬青黑, &quot;Microsoft YaHei&quot;, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, &quot;Arial sans-serif&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span></div></div></div><div class="container"><ol class="breadcrumb"><li><a href="../../../../index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">page de garde</font></font></a></li><li><a href="../readme.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">module de base</font></font></a></li><li class="active"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">module processus_enfant</font></font></li></ol></div><div class="page-body"><div class="container"><div class="sidebar hidden-xs"><div class="panel-group" id="accordion" role="tablist">  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_guide" aria-controls="collapse_guide"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Guide de développement</font></font></a></h4></div><div id="collapse_guide" class="panel-collapse collapse " aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="../../../guide/about.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Qu'est-ce que fibjs?</font></font></a></li>
+<li><a href="../../../guide/install.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Installer l'environnement d'exécution</font></font></a></li>
+<li><a href="../../../guide/hello.md.html" class="notranslate">hello, world</a></li>
+<li><a href="../../../guide/test.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Une belle vie commence par un test</font></font></a></li>
+<li><a href="../../../guide/profiler.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trouvez le tueur de performance</font></font></a></li>
+<li><a href="../../../guide/server-hot-update.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mise à jour à chaud du module serveur</font></font></a></li>
+<li><a href="../../../guide/host-routes.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Routage de nom de domaine</font></font></a></li>
+<li><a href="../../../guide/x509.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Utilisation des certificats X509 dans fibjs</font></font></a></li>
+<li><a href="../../../guide/contribute.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ajouter un module natif</font></font></a></li>
+</ul>
+ </div></div></div>  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_module" aria-controls="collapse_module"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">module de base</font></font></a></h4></div><div id="collapse_module" class="panel-collapse collapse in" aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="assert.md.html" class="notranslate">assert</a></li>
+<li><a href="base32.md.html" class="notranslate">base32</a></li>
+<li><a href="base58.md.html" class="notranslate">base58</a></li>
+<li><a href="base64.md.html" class="notranslate">base64</a></li>
+<li class="active"><a href="child_process.md.html" class="notranslate">child_process</a></li>
+<li><a href="console.md.html" class="notranslate">console</a></li>
+<li><a href="constants.md.html" class="notranslate">constants</a></li>
+<li><a href="coroutine.md.html" class="notranslate">coroutine</a></li>
+<li><a href="crypto.md.html" class="notranslate">crypto</a></li>
+<li><a href="db.md.html" class="notranslate">db</a></li>
+<li><a href="dgram.md.html" class="notranslate">dgram</a></li>
+<li><a href="dns.md.html" class="notranslate">dns</a></li>
+<li><a href="encoding.md.html" class="notranslate">encoding</a></li>
+<li><a href="fs.md.html" class="notranslate">fs</a></li>
+<li><a href="fs_constants.md.html" class="notranslate">fs_constants</a></li>
+<li><a href="gd.md.html" class="notranslate">gd</a></li>
+<li><a href="global.md.html" class="notranslate">global</a></li>
+<li><a href="gui.md.html" class="notranslate">gui</a></li>
+<li><a href="hash.md.html" class="notranslate">hash</a></li>
+<li><a href="hex.md.html" class="notranslate">hex</a></li>
+<li><a href="http.md.html" class="notranslate">http</a></li>
+<li><a href="iconv.md.html" class="notranslate">iconv</a></li>
+<li><a href="io.md.html" class="notranslate">io</a></li>
+<li><a href="json.md.html" class="notranslate">json</a></li>
+<li><a href="mq.md.html" class="notranslate">mq</a></li>
+<li><a href="msgpack.md.html" class="notranslate">msgpack</a></li>
+<li><a href="multibase.md.html" class="notranslate">multibase</a></li>
+<li><a href="net.md.html" class="notranslate">net</a></li>
+<li><a href="os.md.html" class="notranslate">os</a></li>
+<li><a href="path.md.html" class="notranslate">path</a></li>
+<li><a href="path_posix.md.html" class="notranslate">path_posix</a></li>
+<li><a href="path_win32.md.html" class="notranslate">path_win32</a></li>
+<li><a href="perf_hooks.md.html" class="notranslate">perf_hooks</a></li>
+<li><a href="performance.md.html" class="notranslate">performance</a></li>
+<li><a href="process.md.html" class="notranslate">process</a></li>
+<li><a href="profiler.md.html" class="notranslate">profiler</a></li>
+<li><a href="punycode.md.html" class="notranslate">punycode</a></li>
+<li><a href="querystring.md.html" class="notranslate">querystring</a></li>
+<li><a href="registry.md.html" class="notranslate">registry</a></li>
+<li><a href="ssl.md.html" class="notranslate">ssl</a></li>
+<li><a href="string_decoder.md.html" class="notranslate">string_decoder</a></li>
+<li><a href="test.md.html" class="notranslate">test</a></li>
+<li><a href="timers.md.html" class="notranslate">timers</a></li>
+<li><a href="tty.md.html" class="notranslate">tty</a></li>
+<li><a href="url.md.html" class="notranslate">url</a></li>
+<li><a href="util.md.html" class="notranslate">util</a></li>
+<li><a href="uuid.md.html" class="notranslate">uuid</a></li>
+<li><a href="vm.md.html" class="notranslate">vm</a></li>
+<li><a href="worker_threads.md.html" class="notranslate">worker_threads</a></li>
+<li><a href="ws.md.html" class="notranslate">ws</a></li>
+<li><a href="xml.md.html" class="notranslate">xml</a></li>
+<li><a href="zip.md.html" class="notranslate">zip</a></li>
+<li><a href="zlib.md.html" class="notranslate">zlib</a></li>
+</ul>
+ </div></div></div>  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_object" aria-controls="collapse_object"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">objets intégrés</font></font></a></h4></div><div id="collapse_object" class="panel-collapse collapse " aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="../../object/ifs/buffer.md.html" class="notranslate">Buffer</a></li>
+<li><a href="../../object/ifs/bufferedstream.md.html" class="notranslate">BufferedStream</a></li>
+<li><a href="../../object/ifs/chain.md.html" class="notranslate">Chain</a></li>
+<li><a href="../../object/ifs/childprocess.md.html" class="notranslate">ChildProcess</a></li>
+<li><a href="../../object/ifs/cipher.md.html" class="notranslate">Cipher</a></li>
+<li><a href="../../object/ifs/condition.md.html" class="notranslate">Condition</a></li>
+<li><a href="../../object/ifs/dbconnection.md.html" class="notranslate">DbConnection</a></li>
+<li><a href="../../object/ifs/dgramsocket.md.html" class="notranslate">DgramSocket</a></li>
+<li><a href="../../object/ifs/digest.md.html" class="notranslate">Digest</a></li>
+<li><a href="../../object/ifs/event.md.html" class="notranslate">Event</a></li>
+<li><a href="../../object/ifs/eventemitter.md.html" class="notranslate">EventEmitter</a></li>
+<li><a href="../../object/ifs/fswatcher.md.html" class="notranslate">FSWatcher</a></li>
+<li><a href="../../object/ifs/fiber.md.html" class="notranslate">Fiber</a></li>
+<li><a href="../../object/ifs/file.md.html" class="notranslate">File</a></li>
+<li><a href="../../object/ifs/handler.md.html" class="notranslate">Handler</a></li>
+<li><a href="../../object/ifs/heapgraphedge.md.html" class="notranslate">HeapGraphEdge</a></li>
+<li><a href="../../object/ifs/heapgraphnode.md.html" class="notranslate">HeapGraphNode</a></li>
+<li><a href="../../object/ifs/heapsnapshot.md.html" class="notranslate">HeapSnapshot</a></li>
+<li><a href="../../object/ifs/httpclient.md.html" class="notranslate">HttpClient</a></li>
+<li><a href="../../object/ifs/httpcollection.md.html" class="notranslate">HttpCollection</a></li>
+<li><a href="../../object/ifs/httpcookie.md.html" class="notranslate">HttpCookie</a></li>
+<li><a href="../../object/ifs/httphandler.md.html" class="notranslate">HttpHandler</a></li>
+<li><a href="../../object/ifs/httpmessage.md.html" class="notranslate">HttpMessage</a></li>
+<li><a href="../../object/ifs/httprepeater.md.html" class="notranslate">HttpRepeater</a></li>
+<li><a href="../../object/ifs/httprequest.md.html" class="notranslate">HttpRequest</a></li>
+<li><a href="../../object/ifs/httpresponse.md.html" class="notranslate">HttpResponse</a></li>
+<li><a href="../../object/ifs/httpserver.md.html" class="notranslate">HttpServer</a></li>
+<li><a href="../../object/ifs/httpuploaddata.md.html" class="notranslate">HttpUploadData</a></li>
+<li><a href="../../object/ifs/httpsserver.md.html" class="notranslate">HttpsServer</a></li>
+<li><a href="../../object/ifs/image.md.html" class="notranslate">Image</a></li>
+<li><a href="../../object/ifs/iterator.md.html" class="notranslate">Iterator</a></li>
+<li><a href="../../object/ifs/leveldb.md.html" class="notranslate">LevelDB</a></li>
+<li><a href="../../object/ifs/lock.md.html" class="notranslate">Lock</a></li>
+<li><a href="../../object/ifs/lrucache.md.html" class="notranslate">LruCache</a></li>
+<li><a href="../../object/ifs/memorystream.md.html" class="notranslate">MemoryStream</a></li>
+<li><a href="../../object/ifs/message.md.html" class="notranslate">Message</a></li>
+<li><a href="../../object/ifs/mongocollection.md.html" class="notranslate">MongoCollection</a></li>
+<li><a href="../../object/ifs/mongocursor.md.html" class="notranslate">MongoCursor</a></li>
+<li><a href="../../object/ifs/mongodb.md.html" class="notranslate">MongoDB</a></li>
+<li><a href="../../object/ifs/mongoid.md.html" class="notranslate">MongoID</a></li>
+<li><a href="../../object/ifs/mysql.md.html" class="notranslate">MySQL</a></li>
+<li><a href="../../object/ifs/odbc.md.html" class="notranslate">Odbc</a></li>
+<li><a href="../../object/ifs/pkey.md.html" class="notranslate">PKey</a></li>
+<li><a href="../../object/ifs/rangestream.md.html" class="notranslate">RangeStream</a></li>
+<li><a href="../../object/ifs/redis.md.html" class="notranslate">Redis</a></li>
+<li><a href="../../object/ifs/redishash.md.html" class="notranslate">RedisHash</a></li>
+<li><a href="../../object/ifs/redislist.md.html" class="notranslate">RedisList</a></li>
+<li><a href="../../object/ifs/redisset.md.html" class="notranslate">RedisSet</a></li>
+<li><a href="../../object/ifs/redissortedset.md.html" class="notranslate">RedisSortedSet</a></li>
+<li><a href="../../object/ifs/routing.md.html" class="notranslate">Routing</a></li>
+<li><a href="../../object/ifs/sqlite.md.html" class="notranslate">SQLite</a></li>
+<li><a href="../../object/ifs/sandbox.md.html" class="notranslate">SandBox</a></li>
+<li><a href="../../object/ifs/seekablestream.md.html" class="notranslate">SeekableStream</a></li>
+<li><a href="../../object/ifs/semaphore.md.html" class="notranslate">Semaphore</a></li>
+<li><a href="../../object/ifs/service.md.html" class="notranslate">Service</a></li>
+<li><a href="../../object/ifs/smtp.md.html" class="notranslate">Smtp</a></li>
+<li><a href="../../object/ifs/socket.md.html" class="notranslate">Socket</a></li>
+<li><a href="../../object/ifs/sslhandler.md.html" class="notranslate">SslHandler</a></li>
+<li><a href="../../object/ifs/sslserver.md.html" class="notranslate">SslServer</a></li>
+<li><a href="../../object/ifs/sslsocket.md.html" class="notranslate">SslSocket</a></li>
+<li><a href="../../object/ifs/stat.md.html" class="notranslate">Stat</a></li>
+<li><a href="../../object/ifs/statswatcher.md.html" class="notranslate">StatsWatcher</a></li>
+<li><a href="../../object/ifs/stream.md.html" class="notranslate">Stream</a></li>
+<li><a href="../../object/ifs/stringdecoder.md.html" class="notranslate">StringDecoder</a></li>
+<li><a href="../../object/ifs/ttyinputstream.md.html" class="notranslate">TTYInputStream</a></li>
+<li><a href="../../object/ifs/ttyoutputstream.md.html" class="notranslate">TTYOutputStream</a></li>
+<li><a href="../../object/ifs/tcpserver.md.html" class="notranslate">TcpServer</a></li>
+<li><a href="../../object/ifs/textdecoder.md.html" class="notranslate">TextDecoder</a></li>
+<li><a href="../../object/ifs/textencoder.md.html" class="notranslate">TextEncoder</a></li>
+<li><a href="../../object/ifs/timer.md.html" class="notranslate">Timer</a></li>
+<li><a href="../../object/ifs/urlobject.md.html" class="notranslate">UrlObject</a></li>
+<li><a href="../../object/ifs/websocket.md.html" class="notranslate">WebSocket</a></li>
+<li><a href="../../object/ifs/websocketmessage.md.html" class="notranslate">WebSocketMessage</a></li>
+<li><a href="../../object/ifs/webview.md.html" class="notranslate">WebView</a></li>
+<li><a href="../../object/ifs/worker.md.html" class="notranslate">Worker</a></li>
+<li><a href="../../object/ifs/x509cert.md.html" class="notranslate">X509Cert</a></li>
+<li><a href="../../object/ifs/x509crl.md.html" class="notranslate">X509Crl</a></li>
+<li><a href="../../object/ifs/x509req.md.html" class="notranslate">X509Req</a></li>
+<li><a href="../../object/ifs/xmlattr.md.html" class="notranslate">XmlAttr</a></li>
+<li><a href="../../object/ifs/xmlcdatasection.md.html" class="notranslate">XmlCDATASection</a></li>
+<li><a href="../../object/ifs/xmlcharacterdata.md.html" class="notranslate">XmlCharacterData</a></li>
+<li><a href="../../object/ifs/xmlcomment.md.html" class="notranslate">XmlComment</a></li>
+<li><a href="../../object/ifs/xmldocument.md.html" class="notranslate">XmlDocument</a></li>
+<li><a href="../../object/ifs/xmldocumenttype.md.html" class="notranslate">XmlDocumentType</a></li>
+<li><a href="../../object/ifs/xmlelement.md.html" class="notranslate">XmlElement</a></li>
+<li><a href="../../object/ifs/xmlnamednodemap.md.html" class="notranslate">XmlNamedNodeMap</a></li>
+<li><a href="../../object/ifs/xmlnode.md.html" class="notranslate">XmlNode</a></li>
+<li><a href="../../object/ifs/xmlnodelist.md.html" class="notranslate">XmlNodeList</a></li>
+<li><a href="../../object/ifs/xmlprocessinginstruction.md.html" class="notranslate">XmlProcessingInstruction</a></li>
+<li><a href="../../object/ifs/xmltext.md.html" class="notranslate">XmlText</a></li>
+<li><a href="../../object/ifs/zipfile.md.html" class="notranslate">ZipFile</a></li>
+<li><a href="../../object/ifs/object.md.html" class="notranslate">object</a></li>
+</ul>
+ </div></div></div>  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_awesome" aria-controls="collapse_awesome"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">module communautaire</font></font></a></h4></div><div id="collapse_awesome" class="panel-collapse collapse " aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="../../../awesome/module/fib-session.md.html" class="notranslate">fib-session</a></li>
+<li><a href="../../../awesome/module/fib-pool.md.html" class="notranslate">fib-pool</a></li>
+<li><a href="../../../awesome/module/fib-orm.md.html" class="notranslate">fib-orm</a></li>
+<li><a href="../../../awesome/module/fib-app.md.html" class="notranslate">fib-app</a></li>
+<li><a href="../../../awesome/module/fib-kv.md.html" class="notranslate">fib-kv</a></li>
+<li><a href="../../../awesome/module/fib-rpc.md.html" class="notranslate">fib-rpc</a></li>
+<li><a href="../../../awesome/module/fib-qr.md.html" class="notranslate">fib-qr</a></li>
+<li><a href="../../../awesome/module/fib-pug.md.html" class="notranslate">fib-pug</a></li>
+<li><a href="../../../awesome/module/ejs.md.html" class="notranslate">ejs</a></li>
+<li><a href="../../../awesome/module/juicer.md.html" class="notranslate">Juicer</a></li>
+<li><a href="../../../awesome/module/highlight.js.md.html" class="notranslate">highlight.js</a></li>
+<li><a href="../../../awesome/module/marked.md.html" class="notranslate">marked</a></li>
+<li><a href="../../../awesome/module/node-cron.md.html" class="notranslate">node-cron</a></li>
+<li><a href="../../../awesome/module/debug.md.html" class="notranslate">debug</a></li>
+<li><a href="../../../awesome/module/benchmark.js.md.html" class="notranslate">benchmark.js</a></li>
+<li><a href="../../../awesome/module/sinon.md.html" class="notranslate">sinon</a></li>
+<li><a href="../../../awesome/module/node-mime.md.html" class="notranslate">node-mime</a></li>
+<li><a href="../../../awesome/module/validatorjs.md.html" class="notranslate">validatorjs</a></li>
+<li><a href="../../../awesome/module/superstruct.md.html" class="notranslate">superstruct</a></li>
+<li><a href="../../../awesome/module/cluster-server.md.html" class="notranslate">cluster-server</a></li>
+<li><a href="../../../awesome/module/synaptic.md.html" class="notranslate">synaptic</a></li>
+<li><a href="../../../awesome/module/source-map.md.html" class="notranslate">source-map</a></li>
+<li><a href="../../../awesome/module/json-format.md.html" class="notranslate">json-format</a></li>
+<li><a href="../../../awesome/module/viz.js.md.html" class="notranslate">viz.js</a></li>
+<li><a href="../../../awesome/module/nomnoml.md.html" class="notranslate">nomnoml</a></li>
+<li><a href="../../../awesome/module/pegjs.md.html" class="notranslate">pegjs</a></li>
+<li><a href="../../../awesome/module/uglify-js.md.html" class="notranslate">uglify-js</a></li>
+<li><a href="../../../awesome/module/js-beautify.md.html" class="notranslate">js-beautify</a></li>
+<li><a href="../../../awesome/module/chalk-animation.md.html" class="notranslate">chalk-animation</a></li>
+<li><a href="../../../awesome/module/jsrsasign.md.html" class="notranslate">jsrsasign</a></li>
+<li><a href="../../../awesome/module/crypto-js.md.html" class="notranslate">crypto-js</a></li>
+<li><a href="../../../awesome/module/ascii-table.md.html" class="notranslate">ascii-table</a></li>
+<li><a href="../../../awesome/module/logstream.md.html" class="notranslate">logstream</a></li>
+<li><a href="../../../awesome/module/ci.md.html" class="notranslate">ci</a></li>
+<li><a href="../../../awesome/module/fs-readdir-recursive.md.html" class="notranslate">fs-readdir-recursive</a></li>
+<li><a href="../../../awesome/module/mkdirp.md.html" class="notranslate">mkdirp</a></li>
+<li><a href="../../../awesome/module/rmdirr.md.html" class="notranslate">rmdirr</a></li>
+<li><a href="../../../awesome/module/detect-port.md.html" class="notranslate">detect-port</a></li>
+<li><a href="../../../awesome/module/bitcoinjs-lib.md.html" class="notranslate">bitcoinjs-lib</a></li>
+<li><a href="../../../awesome/module/rakuten.md.html" class="notranslate">Rakuten</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content"><div class="social-share share-component" data-sites="weibo,twitter" data-description="分享"></div> <div name="模块-child_process" data-unique="模块-child_process"></div><h1 id="模块-child_process"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">module processus_enfant</font></font></h1>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Module de gestion des sous-processus</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Citation:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">var</span> child_process = <span class="hljs-built_in">require</span>(<span class="hljs-string">"child_process"</span>);
+<span class="hljs-keyword">var</span> child = child_process.spawn(<span class="hljs-string">"ls"</span>);
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lors de la création d'un processus enfant, l'option options.stdio est utilisée pour configurer le canal établi entre les processus parent et enfant. </font><font style="vertical-align: inherit;">Par défaut, les stdin, stdout et stderr du processus enfant sont redirigés vers</font></font><a href="../../object/ifs/childprocess.md.html" class="notranslate">ChildProcess</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Les flux stdin, stdout et stderr correspondants sur l'objet. </font><font style="vertical-align: inherit;">Cela équivaut à définir options.stdio sur ['pipe', 'pipe', 'pipe'].</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pour plus de commodité, options.stdio peut être l'une des chaînes suivantes&nbsp;:</font></font></p>
+<ul>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'pipe'&nbsp;: équivalent à ['pipe', 'pipe', 'pipe'] (par défaut).</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'ignorer'&nbsp;: équivalent à ['ignorer', 'ignorer', 'ignorer'].</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'hériter' : équivalent à ['hériter', 'hériter', 'hériter'] ou [0, 1, 2].</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'pty'&nbsp;: équivalent à ['pty', 'pty', 'pty']. </font><font style="vertical-align: inherit;">Windows n'est pas pris en charge.</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sinon, la valeur de options.stdio doit être un tableau (où chaque index correspond à un descripteur de fichier dans le processus enfant). </font><font style="vertical-align: inherit;">Les descripteurs de fichier 0, 1 et 2 correspondent respectivement à stdin, stdout et stderr. </font><font style="vertical-align: inherit;">D'autres descripteurs de fichiers peuvent être spécifiés pour créer des canaux supplémentaires entre les processus parent et enfant. </font><font style="vertical-align: inherit;">La valeur peut être l'une des suivantes&nbsp;:</font></font></p>
+<ol>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'pipe'&nbsp;: crée un canal entre le processus enfant et le processus parent. </font><font style="vertical-align: inherit;">L'extrémité parent du tube est exposée au processus parent en tant qu'attribut stdio[fd] sur l'objet child_process. </font><font style="vertical-align: inherit;">Les canaux créés pour les descripteurs de fichiers 0, 1 et 2 sont également disponibles respectivement en tant que stdin, stdout et stderr.</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'ignore'&nbsp;: ordonne à fibjs d'ignorer les descripteurs de fichiers dans les processus enfants. </font><font style="vertical-align: inherit;">Alors que fibjs aura toujours les descripteurs de fichier 0, 1 et 2 ouverts pour son processus généré, la définition des descripteurs de fichier sur 'ignorer' force fibjs à ouvrir /dev/null et à l'ajouter au descripteur de fichier du processus enfant.</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'inherit'&nbsp;: diffuse le stdio correspondant vers ou depuis le processus parent. </font><font style="vertical-align: inherit;">Dans les trois premières positions, cela équivaut à</font></font><a href="process.md.html#stdin" class="notranslate">process.stdin</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">,</font></font><a href="process.md.html#stdout" class="notranslate">process.stdout</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">et</font></font><a href="process.md.html#stderr" class="notranslate">process.stderr</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font><font style="vertical-align: inherit;">Dans toute autre position, cela équivaut à 'ignorer'.</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">'pty'&nbsp;: le sous-processus sera exécuté dans un terminal virtuel. </font><font style="vertical-align: inherit;">Seuls stdin et stdout sont valides pour le moment.</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Entier positif&nbsp;: la valeur entière est interprétée comme le descripteur de fichier actuellement ouvert dans le processus parent. </font><font style="vertical-align: inherit;">Il est partagé avec le processus enfant, similaire à share&lt;</font></font><a href="../../object/ifs/stream.md.html" class="notranslate">Stream</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt; façon objet. </font><font style="vertical-align: inherit;">Les sockets entrants ne sont pas pris en charge sous Windows.</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">null ou undefined&nbsp;: utilisez la valeur par défaut. </font><font style="vertical-align: inherit;">Pour les descripteurs de fichier 0, 1 et 2 de stdio (en d'autres termes, stdin, stdout et stderr), des canaux seront créés. </font><font style="vertical-align: inherit;">Pour les descripteurs de fichier 3 et plus, la valeur par défaut est 'ignore'.</font></font></li>
+</ol>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</div><span class="hljs-keyword">const</span> {<font></font>
+    spawn<font></font>
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);<font></font>
+<font></font>
+<span class="hljs-comment">// 子进程使用父进程的 stdio。</span>
+spawn(<span class="hljs-string">'prg'</span>, [], {
+    <span class="hljs-attr">stdio</span>: <span class="hljs-string">'inherit'</span><font></font>
+});<font></font>
+<font></font>
+<span class="hljs-comment">// 衍生的子进程只共享 stderr。</span>
+spawn(<span class="hljs-string">'prg'</span>, [], {
+    <span class="hljs-attr">stdio</span>: [<span class="hljs-string">'pipe'</span>, <span class="hljs-string">'pipe'</span>, process.stderr]<font></font>
+});<font></font>
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pour les utilisateurs qui utilisent nodejs en même temps, faites attention</font></font></p>
+<ul>
+<li><font style="vertical-align: inherit;"></font><code>child_process.exec(command, args)</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">L'api de</font><font style="vertical-align: inherit;"> fibjs est similaire à l'api du même nom de nodejs, mais sous windows, elle ne prend pas automatiquement cmd.exe comme environnement d'exécution du paramètre de commande ;</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">child_process.[spawn|exec|execFile|run] de fibjs est une fonction de style asynchrone intégrée de synchronisation/rappel&nbsp;:</font></font><ul>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Synchrone si le dernier argument n'est pas une fonction</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Asynchrone si une fonction est passée comme dernier argument&nbsp;;</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le résultat de retour de child_process.[exec|execFile] de fibjs est un objet </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">complètement différent de l'objet renvoyé par l'api du même nom de nodejs</font></font></strong></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Il n'y a pas d'API correspondante pour fibjs </font></font><code>child_process.run</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">dans nodejs</font></font></li>
+</ul>
+<div name="静态函数" data-unique="静态函数"></div><h2 id="静态函数"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">fonction statique</font></font></h2>
+<div name="spawn" data-unique="spawn"></div><h3 id="spawn" class="notranslate">spawn</h3>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publier un processus enfant avec la commande donnée</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> ChildProcess child_process.spawn(<span class="hljs-built_in">String</span> command,
+    <span class="hljs-built_in">Array</span> args,
+    <span class="hljs-built_in">Object</span> options = {});
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">command</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">args</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Array, spécifie une liste d'arguments de chaîne</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><a href="../../object/ifs/childprocess.md.html" class="notranslate">ChildProcess</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, renvoie l'objet processus enfant</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"stdio"</span>: <span class="hljs-built_in">Array</span> | <span class="hljs-built_in">String</span>, <span class="hljs-comment">// 子进程 stdio 配置</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publier un processus enfant avec la commande donnée</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> ChildProcess child_process.spawn(<span class="hljs-built_in">String</span> command,
+    <span class="hljs-built_in">Object</span> options = {});
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">command</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><a href="../../object/ifs/childprocess.md.html" class="notranslate">ChildProcess</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, renvoie l'objet processus enfant</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"stdio"</span>: <span class="hljs-built_in">Array</span> | <span class="hljs-built_in">String</span>, <span class="hljs-comment">// 子进程 stdio 配置</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<div name="exec" data-unique="exec"></div><h3 id="exec" class="notranslate">exec</h3>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Exécutez une commande dans le shell et tamponnez la sortie, lorsqu'elle est exécutée en tant que rappel, la fonction renverra l'objet de sous-processus</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> (Variant stdout, Variant stderr) child_process.exec(<span class="hljs-built_in">String</span> command,
+    <span class="hljs-built_in">Object</span> options = {}) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">command</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(Variant stdout, Variant stderr), renvoie la sortie stdio du processus enfant</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"encoding"</span>: <span class="hljs-string">"utf8"</span>, <span class="hljs-comment">// 指定返回结果的编码，缺省为 utf8</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<div name="execFile" data-unique="execFile"></div><h3 id="execFile" class="notranslate">execFile</h3>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Exécute directement le fichier spécifié et met en mémoire tampon la sortie. Lorsqu'elle est exécutée en mode rappel, la fonction renvoie l'objet processus enfant</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> (Variant stdout, Variant stderr) child_process.execFile(<span class="hljs-built_in">String</span> command,
+    <span class="hljs-built_in">Array</span> args,
+    <span class="hljs-built_in">Object</span> options = {}) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">command</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">args</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Array, spécifie une liste d'arguments de chaîne</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(Variant stdout, Variant stderr), renvoie la sortie stdio du processus enfant</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"encoding"</span>: <span class="hljs-string">"utf8"</span>, <span class="hljs-comment">// 指定返回结果的编码，缺省为 utf8</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Exécute directement le fichier spécifié et met en mémoire tampon la sortie. Lorsqu'elle est exécutée en mode rappel, la fonction renvoie l'objet processus enfant</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> (Variant stdout, Variant stderr) child_process.execFile(<span class="hljs-built_in">String</span> command,
+    <span class="hljs-built_in">Object</span> options = {}) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">command</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(Variant stdout, Variant stderr), renvoie la sortie stdio du processus enfant</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"encoding"</span>: <span class="hljs-string">"utf8"</span>, <span class="hljs-comment">// 指定返回结果的编码，缺省为 utf8</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<div name="fork" data-unique="fork"></div><h3 id="fork" class="notranslate">fork</h3>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Exécuter un module dans un processus fils</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> ChildProcess child_process.fork(<span class="hljs-built_in">String</span> <span class="hljs-built_in">module</span>,
+    <span class="hljs-built_in">Array</span> args,
+    <span class="hljs-built_in">Object</span> options = {});
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">module</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">args</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Array, spécifie une liste d'arguments de chaîne</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><a href="../../object/ifs/childprocess.md.html" class="notranslate">ChildProcess</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, renvoie l'objet processus enfant</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"stdio"</span>: <span class="hljs-built_in">Array</span> | <span class="hljs-built_in">String</span>, <span class="hljs-comment">// 子进程 stdio 配置</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Exécuter un module dans un processus fils</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> ChildProcess child_process.fork(<span class="hljs-built_in">String</span> <span class="hljs-built_in">module</span>,
+    <span class="hljs-built_in">Object</span> options = {});
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">module</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><a href="../../object/ifs/childprocess.md.html" class="notranslate">ChildProcess</a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, renvoie l'objet processus enfant</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"stdio"</span>: <span class="hljs-built_in">Array</span> | <span class="hljs-built_in">String</span>, <span class="hljs-comment">// 子进程 stdio 配置</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<div name="run" data-unique="run"></div><h3 id="run" class="notranslate">run</h3>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Exécutez directement le fichier spécifié et renvoyez exitCode, lorsqu'il est exécuté en mode de rappel, la fonction renverra l'objet processus enfant</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3</div><span class="hljs-keyword">static</span> Integer child_process.run(<span class="hljs-built_in">String</span> command,
+    <span class="hljs-built_in">Array</span> args,
+    <span class="hljs-built_in">Object</span> options = {}) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">command</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">args</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Array, spécifie une liste d'arguments de chaîne</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">Integer</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, renvoie le exitCode du processus fils</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+<hr>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Exécutez directement le fichier spécifié et renvoyez exitCode, lorsqu'il est exécuté en mode de rappel, la fonction renverra l'objet processus enfant</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2</div><span class="hljs-keyword">static</span> Integer child_process.run(<span class="hljs-built_in">String</span> command,
+    <span class="hljs-built_in">Object</span> options = {}) <span class="hljs-keyword">async</span>;
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres d'appel&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">command</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: String, spécifie la commande à exécuter</font></font></li>
+<li><span class="notranslate">options</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Objet, précise les paramètres de création</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retourner le résultat&nbsp;:</font></font></p>
+<ul>
+<li><span class="notranslate">Integer</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, renvoie le exitCode du processus fils</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le contenu pris en charge par les options est le suivant&nbsp;:</font></font></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9</div>{
+    <span class="hljs-string">"cwd"</span>: <span class="hljs-string">""</span>, <span class="hljs-comment">// 子进程的当前的工作目录，缺省使用当前目录</span>
+    <span class="hljs-string">"env"</span>: {}, <span class="hljs-comment">// 环境变量的键值对</span>
+    <span class="hljs-string">"detached"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 子进程将会变成一个进程组的领导者，缺省为 false</span>
+    <span class="hljs-string">"uid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置用户进程的ID</span>
+    <span class="hljs-string">"gid"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 设置进程组的ID</span>
+    <span class="hljs-string">"windowsVerbatimArguments"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 在 Windows上不执行引号或转义参数。 在 Unix 上被忽略。 当指定外壳且为 CMD 时，此选项将自动设置为true，缺省为 false</span>
+    <span class="hljs-string">"windowsHide"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// 隐藏通常在Windows系统上创建的子进程控制台窗口，缺省为 false</span><font></font>
+}<font></font>
+</code></pre>
+ </div><div class="sidebar hidden-sm hidden-xs hidden-md"><div id="toc" class="tocify"></div></div></div></div><div class="footer"><div class="container"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© Copyright 2012-2021 fibjs.org | </font></font><a href="../../../../support.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Soutenez-nous</font></font></a></div></div><a id="back-to-top" href="#" class="btn btn-default btn-lg back-to-top" role="button" title="" data-toggle="tooltip" data-placement="left" data-original-title="Click to return on the top page" aria-describedby="tooltip119360"><span class="glyphicon glyphicon-chevron-up"></span></a><div class="tooltip fade left in" role="tooltip" id="tooltip119360" style="top: 0px; left: -190px; display: block;"><div class="tooltip-arrow" style="top: 0%;"></div><div class="tooltip-inner"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cliquez pour revenir en haut de la page</font></font></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script type="text/javascript" src="../../../../../js/common.js"></script><script type="text/javascript" src="../../../../../js/docs.js"></script></body></html>

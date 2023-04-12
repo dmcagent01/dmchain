@@ -1,0 +1,1637 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"><link rel="icon" type="image/png" href="../../../../../imgs/icon.png"><title>Objeto objeto - JavaScript en fibra</title><link href="../../../../../css/common.css" rel="stylesheet"><link href="../../../../../css/docs.css" rel="stylesheet"></head><body><div class="navbar navbar-default navbar-static-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Navegación de palanca</font></font></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="../../../../index.html"><img src="../../../../../imgs/logo-dark.png"></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right notranslate"><li><a href="../../../../index.html">HOME</a></li><li><a href="../../../guide/readme.md.html">GUIDE</a></li><li><a href="../../module/readme.md.html">MODULE</a></li><li><a href="../readme.md.html">OBJECT</a></li><li><a href="../../../awesome/readme.md.html">AWESOME</a></li><li><a href="../../../../../download/index.html">DOWNLOAD</a></li><li class="nav-item dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LANGUAGE</a><div class="dropdown-menu"><a href="../../../../../docs/manual/object/ifs/object.md.html">中文</a> <a href="../../../../../ca/docs/manual/object/ifs/object.md.html">Catalan</a> <a href="../../../../../de/docs/manual/object/ifs/object.md.html">Deutsch</a> <a href="../../../../../en/docs/manual/object/ifs/object.md.html">English</a> <a href="../../../../../es/docs/manual/object/ifs/object.md.html">Español</a> <a href="../../../../../fr/docs/manual/object/ifs/object.md.html">Français</a> <a href="../../../../../gl/docs/manual/object/ifs/object.md.html">Galego</a> <a href="../../../../../it/docs/manual/object/ifs/object.md.html">Italiano</a> <a href="../../../../../ru/docs/manual/object/ifs/object.md.html">Русский</a> <a href="../../../../../ja/docs/manual/object/ifs/object.md.html">日本語</a> <a href="../../../../../ko/docs/manual/object/ifs/object.md.html">한국어</a> <a href="../../../../../zh-tw/docs/manual/object/ifs/object.md.html">繁體中文</a></div></li></ul></div></div></div><div class="band"><div class="container"><span class="group"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Objeto objeto incorporado</font></font></span><div class="search"><span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="text" class="searchbox ds-input" placeholder="Búsqueda" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="entrada de búsqueda" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Avenir, &quot;Segoe UI&quot;, Arial, &quot;Hiragino Sans GB&quot;, 冬青黑, &quot;Microsoft YaHei&quot;, 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, &quot;Arial sans-serif&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span></div></div></div><div class="container"><ol class="breadcrumb"><li><a href="../../../../index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">página delantera</font></font></a></li><li><a href="../readme.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">objetos integrados</font></font></a></li><li class="active"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">objeto Objeto</font></font></li></ol></div><div class="page-body"><div class="container"><div class="sidebar hidden-xs"><div class="panel-group" id="accordion" role="tablist">  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_guide" aria-controls="collapse_guide"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Guía de desarrollo</font></font></a></h4></div><div id="collapse_guide" class="panel-collapse collapse " aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="../../../guide/about.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¿Qué es fibjs?</font></font></a></li>
+<li><a href="../../../guide/install.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Instalar el entorno de tiempo de ejecución</font></font></a></li>
+<li><a href="../../../guide/hello.md.html" class="notranslate">hello, world</a></li>
+<li><a href="../../../guide/test.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Una buena vida comienza con una prueba</font></font></a></li>
+<li><a href="../../../guide/profiler.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Encuentra al asesino del rendimiento</font></font></a></li>
+<li><a href="../../../guide/server-hot-update.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Actualización en caliente del módulo del servidor</font></font></a></li>
+<li><a href="../../../guide/host-routes.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enrutamiento de nombres de dominio</font></font></a></li>
+<li><a href="../../../guide/x509.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Uso de certificados X509 en fibjs</font></font></a></li>
+<li><a href="../../../guide/contribute.md.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">añadir módulo nativo</font></font></a></li>
+</ul>
+ </div></div></div>  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_module" aria-controls="collapse_module"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">módulo básico</font></font></a></h4></div><div id="collapse_module" class="panel-collapse collapse " aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="../../module/ifs/assert.md.html" class="notranslate">assert</a></li>
+<li><a href="../../module/ifs/base32.md.html" class="notranslate">base32</a></li>
+<li><a href="../../module/ifs/base58.md.html" class="notranslate">base58</a></li>
+<li><a href="../../module/ifs/base64.md.html" class="notranslate">base64</a></li>
+<li><a href="../../module/ifs/child_process.md.html" class="notranslate">child_process</a></li>
+<li><a href="../../module/ifs/console.md.html" class="notranslate">console</a></li>
+<li><a href="../../module/ifs/constants.md.html" class="notranslate">constants</a></li>
+<li><a href="../../module/ifs/coroutine.md.html" class="notranslate">coroutine</a></li>
+<li><a href="../../module/ifs/crypto.md.html" class="notranslate">crypto</a></li>
+<li><a href="../../module/ifs/db.md.html" class="notranslate">db</a></li>
+<li><a href="../../module/ifs/dgram.md.html" class="notranslate">dgram</a></li>
+<li><a href="../../module/ifs/dns.md.html" class="notranslate">dns</a></li>
+<li><a href="../../module/ifs/encoding.md.html" class="notranslate">encoding</a></li>
+<li><a href="../../module/ifs/fs.md.html" class="notranslate">fs</a></li>
+<li><a href="../../module/ifs/fs_constants.md.html" class="notranslate">fs_constants</a></li>
+<li><a href="../../module/ifs/gd.md.html" class="notranslate">gd</a></li>
+<li><a href="../../module/ifs/global.md.html" class="notranslate">global</a></li>
+<li><a href="../../module/ifs/gui.md.html" class="notranslate">gui</a></li>
+<li><a href="../../module/ifs/hash.md.html" class="notranslate">hash</a></li>
+<li><a href="../../module/ifs/hex.md.html" class="notranslate">hex</a></li>
+<li><a href="../../module/ifs/http.md.html" class="notranslate">http</a></li>
+<li><a href="../../module/ifs/iconv.md.html" class="notranslate">iconv</a></li>
+<li><a href="../../module/ifs/io.md.html" class="notranslate">io</a></li>
+<li><a href="../../module/ifs/json.md.html" class="notranslate">json</a></li>
+<li><a href="../../module/ifs/mq.md.html" class="notranslate">mq</a></li>
+<li><a href="../../module/ifs/msgpack.md.html" class="notranslate">msgpack</a></li>
+<li><a href="../../module/ifs/multibase.md.html" class="notranslate">multibase</a></li>
+<li><a href="../../module/ifs/net.md.html" class="notranslate">net</a></li>
+<li><a href="../../module/ifs/os.md.html" class="notranslate">os</a></li>
+<li><a href="../../module/ifs/path.md.html" class="notranslate">path</a></li>
+<li><a href="../../module/ifs/path_posix.md.html" class="notranslate">path_posix</a></li>
+<li><a href="../../module/ifs/path_win32.md.html" class="notranslate">path_win32</a></li>
+<li><a href="../../module/ifs/perf_hooks.md.html" class="notranslate">perf_hooks</a></li>
+<li><a href="../../module/ifs/performance.md.html" class="notranslate">performance</a></li>
+<li><a href="../../module/ifs/process.md.html" class="notranslate">process</a></li>
+<li><a href="../../module/ifs/profiler.md.html" class="notranslate">profiler</a></li>
+<li><a href="../../module/ifs/punycode.md.html" class="notranslate">punycode</a></li>
+<li><a href="../../module/ifs/querystring.md.html" class="notranslate">querystring</a></li>
+<li><a href="../../module/ifs/registry.md.html" class="notranslate">registry</a></li>
+<li><a href="../../module/ifs/ssl.md.html" class="notranslate">ssl</a></li>
+<li><a href="../../module/ifs/string_decoder.md.html" class="notranslate">string_decoder</a></li>
+<li><a href="../../module/ifs/test.md.html" class="notranslate">test</a></li>
+<li><a href="../../module/ifs/timers.md.html" class="notranslate">timers</a></li>
+<li><a href="../../module/ifs/tty.md.html" class="notranslate">tty</a></li>
+<li><a href="../../module/ifs/url.md.html" class="notranslate">url</a></li>
+<li><a href="../../module/ifs/util.md.html" class="notranslate">util</a></li>
+<li><a href="../../module/ifs/uuid.md.html" class="notranslate">uuid</a></li>
+<li><a href="../../module/ifs/vm.md.html" class="notranslate">vm</a></li>
+<li><a href="../../module/ifs/worker_threads.md.html" class="notranslate">worker_threads</a></li>
+<li><a href="../../module/ifs/ws.md.html" class="notranslate">ws</a></li>
+<li><a href="../../module/ifs/xml.md.html" class="notranslate">xml</a></li>
+<li><a href="../../module/ifs/zip.md.html" class="notranslate">zip</a></li>
+<li><a href="../../module/ifs/zlib.md.html" class="notranslate">zlib</a></li>
+</ul>
+ </div></div></div>  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_object" aria-controls="collapse_object"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">objetos integrados</font></font></a></h4></div><div id="collapse_object" class="panel-collapse collapse in" aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="buffer.md.html" class="notranslate">Buffer</a></li>
+<li><a href="bufferedstream.md.html" class="notranslate">BufferedStream</a></li>
+<li><a href="chain.md.html" class="notranslate">Chain</a></li>
+<li><a href="childprocess.md.html" class="notranslate">ChildProcess</a></li>
+<li><a href="cipher.md.html" class="notranslate">Cipher</a></li>
+<li><a href="condition.md.html" class="notranslate">Condition</a></li>
+<li><a href="dbconnection.md.html" class="notranslate">DbConnection</a></li>
+<li><a href="dgramsocket.md.html" class="notranslate">DgramSocket</a></li>
+<li><a href="digest.md.html" class="notranslate">Digest</a></li>
+<li><a href="event.md.html" class="notranslate">Event</a></li>
+<li><a href="eventemitter.md.html" class="notranslate">EventEmitter</a></li>
+<li><a href="fswatcher.md.html" class="notranslate">FSWatcher</a></li>
+<li><a href="fiber.md.html" class="notranslate">Fiber</a></li>
+<li><a href="file.md.html" class="notranslate">File</a></li>
+<li><a href="handler.md.html" class="notranslate">Handler</a></li>
+<li><a href="heapgraphedge.md.html" class="notranslate">HeapGraphEdge</a></li>
+<li><a href="heapgraphnode.md.html" class="notranslate">HeapGraphNode</a></li>
+<li><a href="heapsnapshot.md.html" class="notranslate">HeapSnapshot</a></li>
+<li><a href="httpclient.md.html" class="notranslate">HttpClient</a></li>
+<li><a href="httpcollection.md.html" class="notranslate">HttpCollection</a></li>
+<li><a href="httpcookie.md.html" class="notranslate">HttpCookie</a></li>
+<li><a href="httphandler.md.html" class="notranslate">HttpHandler</a></li>
+<li><a href="httpmessage.md.html" class="notranslate">HttpMessage</a></li>
+<li><a href="httprepeater.md.html" class="notranslate">HttpRepeater</a></li>
+<li><a href="httprequest.md.html" class="notranslate">HttpRequest</a></li>
+<li><a href="httpresponse.md.html" class="notranslate">HttpResponse</a></li>
+<li><a href="httpserver.md.html" class="notranslate">HttpServer</a></li>
+<li><a href="httpuploaddata.md.html" class="notranslate">HttpUploadData</a></li>
+<li><a href="httpsserver.md.html" class="notranslate">HttpsServer</a></li>
+<li><a href="image.md.html" class="notranslate">Image</a></li>
+<li><a href="iterator.md.html" class="notranslate">Iterator</a></li>
+<li><a href="leveldb.md.html" class="notranslate">LevelDB</a></li>
+<li><a href="lock.md.html" class="notranslate">Lock</a></li>
+<li><a href="lrucache.md.html" class="notranslate">LruCache</a></li>
+<li><a href="memorystream.md.html" class="notranslate">MemoryStream</a></li>
+<li><a href="message.md.html" class="notranslate">Message</a></li>
+<li><a href="mongocollection.md.html" class="notranslate">MongoCollection</a></li>
+<li><a href="mongocursor.md.html" class="notranslate">MongoCursor</a></li>
+<li><a href="mongodb.md.html" class="notranslate">MongoDB</a></li>
+<li><a href="mongoid.md.html" class="notranslate">MongoID</a></li>
+<li><a href="mysql.md.html" class="notranslate">MySQL</a></li>
+<li><a href="odbc.md.html" class="notranslate">Odbc</a></li>
+<li><a href="pkey.md.html" class="notranslate">PKey</a></li>
+<li><a href="rangestream.md.html" class="notranslate">RangeStream</a></li>
+<li><a href="redis.md.html" class="notranslate">Redis</a></li>
+<li><a href="redishash.md.html" class="notranslate">RedisHash</a></li>
+<li><a href="redislist.md.html" class="notranslate">RedisList</a></li>
+<li><a href="redisset.md.html" class="notranslate">RedisSet</a></li>
+<li><a href="redissortedset.md.html" class="notranslate">RedisSortedSet</a></li>
+<li><a href="routing.md.html" class="notranslate">Routing</a></li>
+<li><a href="sqlite.md.html" class="notranslate">SQLite</a></li>
+<li><a href="sandbox.md.html" class="notranslate">SandBox</a></li>
+<li><a href="seekablestream.md.html" class="notranslate">SeekableStream</a></li>
+<li><a href="semaphore.md.html" class="notranslate">Semaphore</a></li>
+<li><a href="service.md.html" class="notranslate">Service</a></li>
+<li><a href="smtp.md.html" class="notranslate">Smtp</a></li>
+<li><a href="socket.md.html" class="notranslate">Socket</a></li>
+<li><a href="sslhandler.md.html" class="notranslate">SslHandler</a></li>
+<li><a href="sslserver.md.html" class="notranslate">SslServer</a></li>
+<li><a href="sslsocket.md.html" class="notranslate">SslSocket</a></li>
+<li><a href="stat.md.html" class="notranslate">Stat</a></li>
+<li><a href="statswatcher.md.html" class="notranslate">StatsWatcher</a></li>
+<li><a href="stream.md.html" class="notranslate">Stream</a></li>
+<li><a href="stringdecoder.md.html" class="notranslate">StringDecoder</a></li>
+<li><a href="ttyinputstream.md.html" class="notranslate">TTYInputStream</a></li>
+<li><a href="ttyoutputstream.md.html" class="notranslate">TTYOutputStream</a></li>
+<li><a href="tcpserver.md.html" class="notranslate">TcpServer</a></li>
+<li><a href="textdecoder.md.html" class="notranslate">TextDecoder</a></li>
+<li><a href="textencoder.md.html" class="notranslate">TextEncoder</a></li>
+<li><a href="timer.md.html" class="notranslate">Timer</a></li>
+<li><a href="urlobject.md.html" class="notranslate">UrlObject</a></li>
+<li><a href="websocket.md.html" class="notranslate">WebSocket</a></li>
+<li><a href="websocketmessage.md.html" class="notranslate">WebSocketMessage</a></li>
+<li><a href="webview.md.html" class="notranslate">WebView</a></li>
+<li><a href="worker.md.html" class="notranslate">Worker</a></li>
+<li><a href="x509cert.md.html" class="notranslate">X509Cert</a></li>
+<li><a href="x509crl.md.html" class="notranslate">X509Crl</a></li>
+<li><a href="x509req.md.html" class="notranslate">X509Req</a></li>
+<li><a href="xmlattr.md.html" class="notranslate">XmlAttr</a></li>
+<li><a href="xmlcdatasection.md.html" class="notranslate">XmlCDATASection</a></li>
+<li><a href="xmlcharacterdata.md.html" class="notranslate">XmlCharacterData</a></li>
+<li><a href="xmlcomment.md.html" class="notranslate">XmlComment</a></li>
+<li><a href="xmldocument.md.html" class="notranslate">XmlDocument</a></li>
+<li><a href="xmldocumenttype.md.html" class="notranslate">XmlDocumentType</a></li>
+<li><a href="xmlelement.md.html" class="notranslate">XmlElement</a></li>
+<li><a href="xmlnamednodemap.md.html" class="notranslate">XmlNamedNodeMap</a></li>
+<li><a href="xmlnode.md.html" class="notranslate">XmlNode</a></li>
+<li><a href="xmlnodelist.md.html" class="notranslate">XmlNodeList</a></li>
+<li><a href="xmlprocessinginstruction.md.html" class="notranslate">XmlProcessingInstruction</a></li>
+<li><a href="xmltext.md.html" class="notranslate">XmlText</a></li>
+<li><a href="zipfile.md.html" class="notranslate">ZipFile</a></li>
+<li class="active"><a href="object.md.html" class="notranslate">object</a></li>
+</ul>
+ </div></div></div>  <div class="panel"><div class="panel-heading" role="tab" id="headingOne"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_awesome" aria-controls="collapse_awesome"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">modulo comunitario</font></font></a></h4></div><div id="collapse_awesome" class="panel-collapse collapse " aria-labelledby="headingOne"><div class="panel-body"> <ul>
+<li><a href="../../../awesome/module/fib-session.md.html" class="notranslate">fib-session</a></li>
+<li><a href="../../../awesome/module/fib-pool.md.html" class="notranslate">fib-pool</a></li>
+<li><a href="../../../awesome/module/fib-orm.md.html" class="notranslate">fib-orm</a></li>
+<li><a href="../../../awesome/module/fib-app.md.html" class="notranslate">fib-app</a></li>
+<li><a href="../../../awesome/module/fib-kv.md.html" class="notranslate">fib-kv</a></li>
+<li><a href="../../../awesome/module/fib-rpc.md.html" class="notranslate">fib-rpc</a></li>
+<li><a href="../../../awesome/module/fib-qr.md.html" class="notranslate">fib-qr</a></li>
+<li><a href="../../../awesome/module/fib-pug.md.html" class="notranslate">fib-pug</a></li>
+<li><a href="../../../awesome/module/ejs.md.html" class="notranslate">ejs</a></li>
+<li><a href="../../../awesome/module/juicer.md.html" class="notranslate">Juicer</a></li>
+<li><a href="../../../awesome/module/highlight.js.md.html" class="notranslate">highlight.js</a></li>
+<li><a href="../../../awesome/module/marked.md.html" class="notranslate">marked</a></li>
+<li><a href="../../../awesome/module/node-cron.md.html" class="notranslate">node-cron</a></li>
+<li><a href="../../../awesome/module/debug.md.html" class="notranslate">debug</a></li>
+<li><a href="../../../awesome/module/benchmark.js.md.html" class="notranslate">benchmark.js</a></li>
+<li><a href="../../../awesome/module/sinon.md.html" class="notranslate">sinon</a></li>
+<li><a href="../../../awesome/module/node-mime.md.html" class="notranslate">node-mime</a></li>
+<li><a href="../../../awesome/module/validatorjs.md.html" class="notranslate">validatorjs</a></li>
+<li><a href="../../../awesome/module/superstruct.md.html" class="notranslate">superstruct</a></li>
+<li><a href="../../../awesome/module/cluster-server.md.html" class="notranslate">cluster-server</a></li>
+<li><a href="../../../awesome/module/synaptic.md.html" class="notranslate">synaptic</a></li>
+<li><a href="../../../awesome/module/source-map.md.html" class="notranslate">source-map</a></li>
+<li><a href="../../../awesome/module/json-format.md.html" class="notranslate">json-format</a></li>
+<li><a href="../../../awesome/module/viz.js.md.html" class="notranslate">viz.js</a></li>
+<li><a href="../../../awesome/module/nomnoml.md.html" class="notranslate">nomnoml</a></li>
+<li><a href="../../../awesome/module/pegjs.md.html" class="notranslate">pegjs</a></li>
+<li><a href="../../../awesome/module/uglify-js.md.html" class="notranslate">uglify-js</a></li>
+<li><a href="../../../awesome/module/js-beautify.md.html" class="notranslate">js-beautify</a></li>
+<li><a href="../../../awesome/module/chalk-animation.md.html" class="notranslate">chalk-animation</a></li>
+<li><a href="../../../awesome/module/jsrsasign.md.html" class="notranslate">jsrsasign</a></li>
+<li><a href="../../../awesome/module/crypto-js.md.html" class="notranslate">crypto-js</a></li>
+<li><a href="../../../awesome/module/ascii-table.md.html" class="notranslate">ascii-table</a></li>
+<li><a href="../../../awesome/module/logstream.md.html" class="notranslate">logstream</a></li>
+<li><a href="../../../awesome/module/ci.md.html" class="notranslate">ci</a></li>
+<li><a href="../../../awesome/module/fs-readdir-recursive.md.html" class="notranslate">fs-readdir-recursive</a></li>
+<li><a href="../../../awesome/module/mkdirp.md.html" class="notranslate">mkdirp</a></li>
+<li><a href="../../../awesome/module/rmdirr.md.html" class="notranslate">rmdirr</a></li>
+<li><a href="../../../awesome/module/detect-port.md.html" class="notranslate">detect-port</a></li>
+<li><a href="../../../awesome/module/bitcoinjs-lib.md.html" class="notranslate">bitcoinjs-lib</a></li>
+<li><a href="../../../awesome/module/rakuten.md.html" class="notranslate">Rakuten</a></li>
+</ul>
+ </div></div></div>  </div></div><div class="content"><div class="social-share share-component" data-sites="weibo,twitter" data-description="分享"></div> <div name="对象-object" data-unique="对象-object"></div><h1 id="对象-object"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">objeto Objeto</font></font></h1>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">El objeto base, del que heredan todos los objetos.</font></font></p>
+<div name="继承关系" data-unique="继承关系"></div><h2 id="继承关系"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">relación de herencia</font></font></h2>
+<div class="dot notranslate"><svg version="1.1" baseProfile="full" width="7385.0" height="424.0" viewBox="0 0 7385 424" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+    <desc>
+    #lineWidth: 1.5
+    #font: Helvetica,sans-Serif
+    #fontSize: 10
+    #leading: 1.6
+    #.this: fill=lightgray
+    #.class: fill=white
+
+    [&lt;this&gt;object|toString();toJSON()]
+    [&lt;class&gt;Buffer]
+    [&lt;class&gt;Cipher]
+    [&lt;class&gt;DbConnection]
+    [&lt;class&gt;MySQL]
+    [&lt;class&gt;Odbc]
+    [&lt;class&gt;SQLite]
+    [&lt;class&gt;Digest]
+    [&lt;class&gt;EventEmitter]
+    [&lt;class&gt;ChildProcess]
+    [&lt;class&gt;DgramSocket]
+    [&lt;class&gt;FSWatcher]
+    [&lt;class&gt;LruCache]
+    [&lt;class&gt;Service]
+    [&lt;class&gt;StatsWatcher]
+    [&lt;class&gt;WebSocket]
+    [&lt;class&gt;WebView]
+    [&lt;class&gt;Worker]
+    [&lt;class&gt;Fiber]
+    [&lt;class&gt;Handler]
+    [&lt;class&gt;Chain]
+    [&lt;class&gt;HttpHandler]
+    [&lt;class&gt;HttpRepeater]
+    [&lt;class&gt;Routing]
+    [&lt;class&gt;SslHandler]
+    [&lt;class&gt;HeapGraphEdge]
+    [&lt;class&gt;HeapGraphNode]
+    [&lt;class&gt;HeapSnapshot]
+    [&lt;class&gt;HttpClient]
+    [&lt;class&gt;HttpCollection]
+    [&lt;class&gt;HttpCookie]
+    [&lt;class&gt;HttpUploadData]
+    [&lt;class&gt;Image]
+    [&lt;class&gt;Iterator]
+    [&lt;class&gt;LevelDB]
+    [&lt;class&gt;Lock]
+    [&lt;class&gt;Condition]
+    [&lt;class&gt;Event]
+    [&lt;class&gt;Semaphore]
+    [&lt;class&gt;Message]
+    [&lt;class&gt;HttpMessage]
+    [&lt;class&gt;HttpRequest]
+    [&lt;class&gt;HttpResponse]
+    [&lt;class&gt;WebSocketMessage]
+    [&lt;class&gt;MongoCollection]
+    [&lt;class&gt;MongoCursor]
+    [&lt;class&gt;MongoDB]
+    [&lt;class&gt;MongoID]
+    [&lt;class&gt;PKey]
+    [&lt;class&gt;Redis]
+    [&lt;class&gt;RedisHash]
+    [&lt;class&gt;RedisList]
+    [&lt;class&gt;RedisSet]
+    [&lt;class&gt;RedisSortedSet]
+    [&lt;class&gt;SandBox]
+    [&lt;class&gt;Smtp]
+    [&lt;class&gt;Stat]
+    [&lt;class&gt;Stream]
+    [&lt;class&gt;BufferedStream]
+    [&lt;class&gt;SeekableStream]
+    [&lt;class&gt;File]
+    [&lt;class&gt;MemoryStream]
+    [&lt;class&gt;RangeStream]
+    [&lt;class&gt;Socket]
+    [&lt;class&gt;SslSocket]
+    [&lt;class&gt;TTYInputStream]
+    [&lt;class&gt;TTYOutputStream]
+    [&lt;class&gt;StringDecoder]
+    [&lt;class&gt;TcpServer]
+    [&lt;class&gt;HttpServer]
+    [&lt;class&gt;HttpsServer]
+    [&lt;class&gt;SslServer]
+    [&lt;class&gt;TextDecoder]
+    [&lt;class&gt;TextEncoder]
+    [&lt;class&gt;Timer]
+    [&lt;class&gt;UrlObject]
+    [&lt;class&gt;X509Cert]
+    [&lt;class&gt;X509Crl]
+    [&lt;class&gt;X509Req]
+    [&lt;class&gt;XmlAttr]
+    [&lt;class&gt;XmlNamedNodeMap]
+    [&lt;class&gt;XmlNode]
+    [&lt;class&gt;XmlCharacterData]
+    [&lt;class&gt;XmlComment]
+    [&lt;class&gt;XmlText]
+    [&lt;class&gt;XmlCDATASection]
+    [&lt;class&gt;XmlDocument]
+    [&lt;class&gt;XmlDocumentType]
+    [&lt;class&gt;XmlElement]
+    [&lt;class&gt;XmlProcessingInstruction]
+    [&lt;class&gt;XmlNodeList]
+    [&lt;class&gt;ZipFile]
+
+    [object] &lt;:- [Buffer]
+    [object] &lt;:- [Cipher]
+    [object] &lt;:- [DbConnection]
+    [DbConnection] &lt;:- [MySQL]
+    [DbConnection] &lt;:- [Odbc]
+    [DbConnection] &lt;:- [SQLite]
+    [object] &lt;:- [Digest]
+    [object] &lt;:- [EventEmitter]
+    [EventEmitter] &lt;:- [ChildProcess]
+    [EventEmitter] &lt;:- [DgramSocket]
+    [EventEmitter] &lt;:- [FSWatcher]
+    [EventEmitter] &lt;:- [LruCache]
+    [EventEmitter] &lt;:- [Service]
+    [EventEmitter] &lt;:- [StatsWatcher]
+    [EventEmitter] &lt;:- [WebSocket]
+    [EventEmitter] &lt;:- [WebView]
+    [EventEmitter] &lt;:- [Worker]
+    [object] &lt;:- [Fiber]
+    [object] &lt;:- [Handler]
+    [Handler] &lt;:- [Chain]
+    [Handler] &lt;:- [HttpHandler]
+    [Handler] &lt;:- [HttpRepeater]
+    [Handler] &lt;:- [Routing]
+    [Handler] &lt;:- [SslHandler]
+    [object] &lt;:- [HeapGraphEdge]
+    [object] &lt;:- [HeapGraphNode]
+    [object] &lt;:- [HeapSnapshot]
+    [object] &lt;:- [HttpClient]
+    [object] &lt;:- [HttpCollection]
+    [object] &lt;:- [HttpCookie]
+    [object] &lt;:- [HttpUploadData]
+    [object] &lt;:- [Image]
+    [object] &lt;:- [Iterator]
+    [object] &lt;:- [LevelDB]
+    [object] &lt;:- [Lock]
+    [Lock] &lt;:- [Condition]
+    [Lock] &lt;:- [Event]
+    [Lock] &lt;:- [Semaphore]
+    [object] &lt;:- [Message]
+    [Message] &lt;:- [HttpMessage]
+    [HttpMessage] &lt;:- [HttpRequest]
+    [HttpMessage] &lt;:- [HttpResponse]
+    [Message] &lt;:- [WebSocketMessage]
+    [object] &lt;:- [MongoCollection]
+    [object] &lt;:- [MongoCursor]
+    [object] &lt;:- [MongoDB]
+    [object] &lt;:- [MongoID]
+    [object] &lt;:- [PKey]
+    [object] &lt;:- [Redis]
+    [object] &lt;:- [RedisHash]
+    [object] &lt;:- [RedisList]
+    [object] &lt;:- [RedisSet]
+    [object] &lt;:- [RedisSortedSet]
+    [object] &lt;:- [SandBox]
+    [object] &lt;:- [Smtp]
+    [object] &lt;:- [Stat]
+    [object] &lt;:- [Stream]
+    [Stream] &lt;:- [BufferedStream]
+    [Stream] &lt;:- [SeekableStream]
+    [SeekableStream] &lt;:- [File]
+    [SeekableStream] &lt;:- [MemoryStream]
+    [SeekableStream] &lt;:- [RangeStream]
+    [Stream] &lt;:- [Socket]
+    [Stream] &lt;:- [SslSocket]
+    [Stream] &lt;:- [TTYInputStream]
+    [Stream] &lt;:- [TTYOutputStream]
+    [object] &lt;:- [StringDecoder]
+    [object] &lt;:- [TcpServer]
+    [TcpServer] &lt;:- [HttpServer]
+    [HttpServer] &lt;:- [HttpsServer]
+    [TcpServer] &lt;:- [SslServer]
+    [object] &lt;:- [TextDecoder]
+    [object] &lt;:- [TextEncoder]
+    [object] &lt;:- [Timer]
+    [object] &lt;:- [UrlObject]
+    [object] &lt;:- [X509Cert]
+    [object] &lt;:- [X509Crl]
+    [object] &lt;:- [X509Req]
+    [object] &lt;:- [XmlAttr]
+    [object] &lt;:- [XmlNamedNodeMap]
+    [object] &lt;:- [XmlNode]
+    [XmlNode] &lt;:- [XmlCharacterData]
+    [XmlCharacterData] &lt;:- [XmlComment]
+    [XmlCharacterData] &lt;:- [XmlText]
+    [XmlText] &lt;:- [XmlCDATASection]
+    [XmlNode] &lt;:- [XmlDocument]
+    [XmlNode] &lt;:- [XmlDocumentType]
+    [XmlNode] &lt;:- [XmlElement]
+    [XmlNode] &lt;:- [XmlProcessingInstruction]
+    [object] &lt;:- [XmlNodeList]
+    [object] &lt;:- [ZipFile]
+    </desc>
+    <g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="10pt" font-family="Helvetica,sans-Serif" font-weight="bold" font-style="normal">
+        <g font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="bold" font-style="normal" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+            <g stroke="transparent" fill="transparent">
+                <rect x="0.0" y="0.0" height="424.0" width="7385.0" stroke="none"></rect>
+            </g>
+            <g transform="translate(8, 8)" fill="#33322E">
+                <g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal">
+                    <path d="M4034.4 40.8 L27.5 100 L27.5 120 L27.5 120.0 " fill="none"></path>
+                    <path d="M4034.5 46.1 L4034.4 40.8 L4034.3 35.4 L4047.8 40.6 Z"></path>
+                    <path d="M4034.4 40.8 L124.5 100 L124.5 120 L124.5 120.0 " fill="none"></path>
+                    <path d="M4034.5 46.1 L4034.4 40.8 L4034.3 35.5 L4047.8 40.6 Z"></path>
+                    <path d="M4034.4 40.8 L248.5 100 L248.5 120 L248.5 120.0 " fill="none"></path>
+                    <path d="M4034.5 46.1 L4034.4 40.8 L4034.3 35.5 L4047.8 40.6 Z"></path>
+                    <path d="M181.1 152.7 L103.25 172 L103.25 192 L103.3 192.0 " fill="none"></path>
+                    <path d="M182.3 157.9 L181.1 152.7 L179.8 147.5 L194.0 149.5 Z"></path>
+                    <path d="M216.6 160.0 L200.75 172 L200.75 192 L200.8 192.0 " fill="none"></path>
+                    <path d="M219.8 164.3 L216.6 160.0 L213.4 155.8 L227.3 152.0 Z"></path>
+                    <path d="M280.4 160.0 L296.25 172 L296.25 192 L296.3 192.0 " fill="none"></path>
+                    <path d="M283.6 155.8 L280.4 160.0 L277.2 164.3 L269.7 152.0 Z"></path>
+                    <path d="M4034.4 40.8 L408.25 100 L408.25 120 L408.3 120.0 " fill="none"></path>
+                    <path d="M4034.5 46.2 L4034.4 40.8 L4034.3 35.5 L4047.8 40.6 Z"></path>
+                    <path d="M4034.4 40.9 L800.75 100 L800.75 120 L800.8 120.0 " fill="none"></path>
+                    <path d="M4034.5 46.3 L4034.4 40.9 L4034.3 35.6 L4047.8 40.7 Z"></path>
+                    <path d="M738.0 141.9 L417.75 172 L417.75 192 L417.8 192.0 " fill="none"></path>
+                    <path d="M738.5 147.2 L738.0 141.9 L737.5 136.6 L751.3 140.7 Z"></path>
+                    <path d="M738.1 145.4 L561.25 172 L561.25 192 L561.3 192.0 " fill="none"></path>
+                    <path d="M738.9 150.7 L738.1 145.4 L737.3 140.1 L751.3 143.4 Z"></path>
+                    <path d="M742.4 156.4 L697.75 172 L697.75 192 L697.8 192.0 " fill="none"></path>
+                    <path d="M744.1 161.4 L742.4 156.4 L740.6 151.4 L755.0 152.0 Z"></path>
+                    <path d="M817.1 163.4 L822.25 172 L822.25 192 L822.3 192.0 " fill="none"></path>
+                    <path d="M821.7 160.7 L817.1 163.4 L812.6 166.2 L810.3 152.0 Z"></path>
+                    <path d="M863.1 152.8 L934.75 172 L934.75 192 L934.8 192.0 " fill="none"></path>
+                    <path d="M864.5 147.6 L863.1 152.8 L861.7 157.9 L850.3 149.3 Z"></path>
+                    <path d="M863.5 144.7 L1059.25 172 L1059.25 192 L1059.3 192.0 " fill="none"></path>
+                    <path d="M864.2 139.5 L863.5 144.7 L862.7 150.0 L850.3 142.9 Z"></path>
+                    <path d="M863.5 141.7 L1196.75 172 L1196.75 192 L1196.8 192.0 " fill="none"></path>
+                    <path d="M864.0 136.4 L863.5 141.7 L863.0 147.0 L850.3 140.5 Z"></path>
+                    <path d="M863.6 140.3 L1320.75 172 L1320.75 192 L1320.8 192.0 " fill="none"></path>
+                    <path d="M863.9 135.0 L863.6 140.3 L863.2 145.7 L850.3 139.4 Z"></path>
+                    <path d="M863.6 139.6 L1431.25 172 L1431.25 192 L1431.3 192.0 " fill="none"></path>
+                    <path d="M863.9 134.3 L863.6 139.6 L863.3 144.9 L850.3 138.8 Z"></path>
+                    <path d="M4034.4 41.2 L1537.25 100 L1537.25 120 L1537.3 120.0 " fill="none"></path>
+                    <path d="M4034.5 46.6 L4034.4 41.2 L4034.3 35.9 L4047.8 40.9 Z"></path>
+                    <path d="M4034.4 41.3 L1753.25 100 L1753.25 120 L1753.3 120.0 " fill="none"></path>
+                    <path d="M4034.6 46.7 L4034.4 41.3 L4034.3 36.0 L4047.8 41.0 Z"></path>
+                    <path d="M1706.1 143.6 L1530.25 172 L1530.25 192 L1530.3 192.0 " fill="none"></path>
+                    <path d="M1706.9 148.9 L1706.1 143.6 L1705.2 138.3 L1719.3 141.5 Z"></path>
+                    <path d="M1706.6 151.4 L1644.25 172 L1644.25 192 L1644.3 192.0 " fill="none"></path>
+                    <path d="M1708.3 156.5 L1706.6 151.4 L1704.9 146.3 L1719.3 147.2 Z"></path>
+                    <path d="M1775.1 162.2 L1783.25 172 L1783.25 192 L1783.3 192.0 " fill="none"></path>
+                    <path d="M1779.2 158.8 L1775.1 162.2 L1771.0 165.7 L1766.6 152.0 Z"></path>
+                    <path d="M1800.6 138.7 L2374.75 172 L2374.75 192 L2374.8 192.0 " fill="none"></path>
+                    <path d="M1800.9 133.4 L1800.6 138.7 L1800.3 144.1 L1787.3 138.0 Z"></path>
+                    <path d="M1800.6 138.3 L2492.25 172 L2492.25 192 L2492.3 192.0 " fill="none"></path>
+                    <path d="M1800.8 133.0 L1800.6 138.3 L1800.3 143.6 L1787.3 137.7 Z"></path>
+                    <path d="M4034.4 41.4 L1890.25 100 L1890.25 120 L1890.3 120.0 " fill="none"></path>
+                    <path d="M4034.6 46.7 L4034.4 41.4 L4034.3 36.1 L4047.8 41.1 Z"></path>
+                    <path d="M4034.4 41.5 L2056.75 100 L2056.75 120 L2056.8 120.0 " fill="none"></path>
+                    <path d="M4034.6 46.9 L4034.4 41.5 L4034.3 36.2 L4047.8 41.1 Z"></path>
+                    <path d="M4034.4 41.7 L2217.25 100 L2217.25 120 L2217.3 120.0 " fill="none"></path>
+                    <path d="M4034.6 47.0 L4034.4 41.7 L4034.3 36.3 L4047.8 41.2 Z"></path>
+                    <path d="M4034.4 41.8 L2354.25 100 L2354.25 120 L2354.3 120.0 " fill="none"></path>
+                    <path d="M4034.6 47.1 L4034.4 41.8 L4034.2 36.5 L4047.8 41.3 Z"></path>
+                    <path d="M4034.4 41.9 L2488.25 100 L2488.25 120 L2488.3 120.0 " fill="none"></path>
+                    <path d="M4034.6 47.3 L4034.4 41.9 L4034.2 36.6 L4047.8 41.4 Z"></path>
+                    <path d="M4034.4 42.1 L2626.75 100 L2626.75 120 L2626.8 120.0 " fill="none"></path>
+                    <path d="M4034.6 47.5 L4034.4 42.1 L4034.2 36.8 L4047.8 41.6 Z"></path>
+                    <path d="M4034.4 42.4 L2771.25 100 L2771.25 120 L2771.3 120.0 " fill="none"></path>
+                    <path d="M4034.7 47.7 L4034.4 42.4 L4034.2 37.0 L4047.8 41.8 Z"></path>
+                    <path d="M4034.4 42.6 L2899.75 100 L2899.75 120 L2899.8 120.0 " fill="none"></path>
+                    <path d="M4034.7 47.9 L4034.4 42.6 L4034.2 37.3 L4047.8 41.9 Z"></path>
+                    <path d="M4034.4 42.9 L3000.25 100 L3000.25 120 L3000.3 120.0 " fill="none"></path>
+                    <path d="M4034.7 48.2 L4034.4 42.9 L4034.1 37.5 L4047.8 42.1 Z"></path>
+                    <path d="M4034.4 43.2 L3107.75 100 L3107.75 120 L3107.8 120.0 " fill="none"></path>
+                    <path d="M4034.8 48.5 L4034.4 43.2 L4034.1 37.9 L4047.8 42.4 Z"></path>
+                    <path d="M4034.4 43.5 L3207.25 100 L3207.25 120 L3207.3 120.0 " fill="none"></path>
+                    <path d="M4034.8 48.9 L4034.4 43.5 L4034.1 38.2 L4047.8 42.6 Z"></path>
+                    <path d="M3169.9 138.3 L2615.75 172 L2615.75 192 L2615.8 192.0 " fill="none"></path>
+                    <path d="M3170.3 143.6 L3169.9 138.3 L3169.6 132.9 L3183.3 137.5 Z"></path>
+                    <path d="M3170.4 146.3 L3078.75 172 L3078.75 192 L3078.8 192.0 " fill="none"></path>
+                    <path d="M3171.8 151.5 L3170.4 146.3 L3169.0 141.2 L3183.3 142.7 Z"></path>
+                    <path d="M3244.3 144.0 L3373.5 172 L3373.5 192 L3373.5 192.0 " fill="none"></path>
+                    <path d="M3245.4 138.8 L3244.3 144.0 L3243.2 149.2 L3231.3 141.2 Z"></path>
+                    <path d="M4034.5 45.4 L3511 100 L3511 120 L3511.0 120.0 " fill="none"></path>
+                    <path d="M4035.0 50.7 L4034.5 45.4 L4033.9 40.1 L4047.8 44.0 Z"></path>
+                    <path d="M3511.0 165.3 L3511 172 L3511 192 L3511.0 192.0 " fill="none"></path>
+                    <path d="M3516.3 165.3 L3511.0 165.3 L3505.7 165.3 L3511.0 152.0 Z"></path>
+                    <path d="M3475.7 231.3 L3456.5 244 L3456.5 264 L3456.5 264.0 " fill="none"></path>
+                    <path d="M3478.6 235.8 L3475.7 231.3 L3472.7 226.9 L3486.8 224.0 Z"></path>
+                    <path d="M3575.8 211.4 L4193.25 244 L4193.25 264 L4193.3 264.0 " fill="none"></path>
+                    <path d="M3576.1 206.1 L3575.8 211.4 L3575.5 216.7 L3562.5 210.7 Z"></path>
+                    <path d="M3562.3 138.6 L4224 172 L4224 192 L4224.0 192.0 " fill="none"></path>
+                    <path d="M3562.6 133.3 L3562.3 138.6 L3562.0 143.9 L3549.0 137.9 Z"></path>
+                    <path d="M4034.5 47.1 L3652 100 L3652 120 L3652.0 120.0 " fill="none"></path>
+                    <path d="M4035.3 52.4 L4034.5 47.1 L4033.8 41.9 L4047.8 45.3 Z"></path>
+                    <path d="M4034.7 51.1 L3807.5 100 L3807.5 120 L3807.5 120.0 " fill="none"></path>
+                    <path d="M4035.8 56.3 L4034.7 51.1 L4033.6 45.9 L4047.8 48.3 Z"></path>
+                    <path d="M4035.4 60.9 L3940 100 L3940 120 L3940.0 120.0 " fill="none"></path>
+                    <path d="M4037.4 65.8 L4035.4 60.9 L4033.4 55.9 L4047.8 55.8 Z"></path>
+                    <path d="M4061.3 92.0 L4057.5 100 L4057.5 120 L4057.5 120.0 " fill="none"></path>
+                    <path d="M4066.1 94.3 L4061.3 92.0 L4056.5 89.7 L4067.1 80.0 Z"></path>
+                    <path d="M4135.1 79.7 L4160 100 L4160 120 L4160.0 120.0 " fill="none"></path>
+                    <path d="M4138.5 75.6 L4135.1 79.7 L4131.7 83.9 L4124.8 71.3 Z"></path>
+                    <path d="M4137.3 58.5 L4252 100 L4252 120 L4252.0 120.0 " fill="none"></path>
+                    <path d="M4139.1 53.5 L4137.3 58.5 L4135.5 63.5 L4124.8 53.9 Z"></path>
+                    <path d="M4137.8 51.2 L4363 100 L4363 120 L4363.0 120.0 " fill="none"></path>
+                    <path d="M4138.9 46.0 L4137.8 51.2 L4136.7 56.4 L4124.8 48.3 Z"></path>
+                    <path d="M4137.9 47.8 L4485.5 100 L4485.5 120 L4485.5 120.0 " fill="none"></path>
+                    <path d="M4138.7 42.5 L4137.9 47.8 L4137.1 53.0 L4124.8 45.8 Z"></path>
+                    <path d="M4138.0 46.0 L4601.5 100 L4601.5 120 L4601.5 120.0 " fill="none"></path>
+                    <path d="M4138.6 40.7 L4138.0 46.0 L4137.4 51.3 L4124.8 44.5 Z"></path>
+                    <path d="M4138.0 44.8 L4738.5 100 L4738.5 120 L4738.5 120.0 " fill="none"></path>
+                    <path d="M4138.5 39.5 L4138.0 44.8 L4137.5 50.1 L4124.8 43.5 Z"></path>
+                    <path d="M4138.0 43.9 L4875.5 100 L4875.5 120 L4875.5 120.0 " fill="none"></path>
+                    <path d="M4138.4 38.6 L4138.0 43.9 L4137.6 49.3 L4124.8 42.9 Z"></path>
+                    <path d="M4138.1 43.5 L4977.5 100 L4977.5 120 L4977.5 120.0 " fill="none"></path>
+                    <path d="M4138.4 38.2 L4138.1 43.5 L4137.7 48.8 L4124.8 42.6 Z"></path>
+                    <path d="M4138.1 43.2 L5063 100 L5063 120 L5063.0 120.0 " fill="none"></path>
+                    <path d="M4138.4 37.9 L4138.1 43.2 L4137.7 48.5 L4124.8 42.4 Z"></path>
+                    <path d="M4138.1 42.9 L5155.5 100 L5155.5 120 L5155.5 120.0 " fill="none"></path>
+                    <path d="M4138.4 37.6 L4138.1 42.9 L4137.8 48.2 L4124.8 42.2 Z"></path>
+                    <path d="M5110.7 138.1 L4399 172 L4399 192 L4399.0 192.0 " fill="none"></path>
+                    <path d="M5110.9 143.5 L5110.7 138.1 L5110.4 132.8 L5124.0 137.5 Z"></path>
+                    <path d="M5110.7 138.7 L4560.5 172 L4560.5 192 L4560.5 192.0 " fill="none"></path>
+                    <path d="M5111.0 144.0 L5110.7 138.7 L5110.4 133.4 L5124.0 137.9 Z"></path>
+                    <path d="M4485.3 218.7 L4307.25 244 L4307.25 264 L4307.3 264.0 " fill="none"></path>
+                    <path d="M4486.0 224.0 L4485.3 218.7 L4484.5 213.4 L4498.5 216.8 Z"></path>
+                    <path d="M4487.1 227.4 L4424.25 244 L4424.25 264 L4424.3 264.0 " fill="none"></path>
+                    <path d="M4488.4 232.6 L4487.1 227.4 L4485.7 222.2 L4499.9 224.0 Z"></path>
+                    <path d="M4635.7 217.6 L4841.5 244 L4841.5 264 L4841.5 264.0 " fill="none"></path>
+                    <path d="M4636.4 212.3 L4635.7 217.6 L4635.0 222.9 L4622.5 215.9 Z"></path>
+                    <path d="M5110.7 139.5 L4693 172 L4693 192 L4693.0 192.0 " fill="none"></path>
+                    <path d="M5111.1 144.8 L5110.7 139.5 L5110.3 134.2 L5124.0 138.5 Z"></path>
+                    <path d="M5141.4 163.9 L5137.25 172 L5137.25 192 L5137.3 192.0 " fill="none"></path>
+                    <path d="M5146.1 166.3 L5141.4 163.9 L5136.6 161.5 L5147.4 152.0 Z"></path>
+                    <path d="M5199.8 148.9 L5278.75 172 L5278.75 192 L5278.8 192.0 " fill="none"></path>
+                    <path d="M5201.3 143.8 L5199.8 148.9 L5198.3 154.1 L5187.0 145.2 Z"></path>
+                    <path d="M5200.3 140.8 L5490.75 172 L5490.75 192 L5490.8 192.0 " fill="none"></path>
+                    <path d="M5200.8 135.5 L5200.3 140.8 L5199.7 146.1 L5187.0 139.4 Z"></path>
+                    <path d="M4138.1 42.1 L5560.25 100 L5560.25 120 L5560.3 120.0 " fill="none"></path>
+                    <path d="M4138.3 36.8 L4138.1 42.1 L4137.9 47.4 L4124.8 41.6 Z"></path>
+                    <path d="M4138.1 41.9 L5701.5 100 L5701.5 120 L5701.5 120.0 " fill="none"></path>
+                    <path d="M4138.3 36.6 L4138.1 41.9 L4137.9 47.3 L4124.8 41.4 Z"></path>
+                    <path d="M5662.8 158.8 L5640.25 172 L5640.25 192 L5640.3 192.0 " fill="none"></path>
+                    <path d="M5665.5 163.4 L5662.8 158.8 L5660.1 154.2 L5674.3 152.0 Z"></path>
+                    <path d="M5640.3 237.3 L5640.25 244 L5640.25 264 L5640.3 264.0 " fill="none"></path>
+                    <path d="M5645.6 237.3 L5640.3 237.3 L5634.9 237.3 L5640.3 224.0 Z"></path>
+                    <path d="M5740.2 158.8 L5762.75 172 L5762.75 192 L5762.8 192.0 " fill="none"></path>
+                    <path d="M5742.9 154.2 L5740.2 158.8 L5737.5 163.4 L5728.7 152.0 Z"></path>
+                    <path d="M4138.1 41.8 L5833.5 100 L5833.5 120 L5833.5 120.0 " fill="none"></path>
+                    <path d="M4138.3 36.4 L4138.1 41.8 L4137.9 47.1 L4124.8 41.3 Z"></path>
+                    <path d="M4138.1 41.6 L5973 100 L5973 120 L5973.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 36.3 L4138.1 41.6 L4137.9 47.0 L4124.8 41.2 Z"></path>
+                    <path d="M4138.1 41.6 L6089 100 L6089 120 L6089.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 36.2 L4138.1 41.6 L4137.9 46.9 L4124.8 41.2 Z"></path>
+                    <path d="M4138.1 41.5 L6194 100 L6194 120 L6194.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 36.1 L4138.1 41.5 L4137.9 46.8 L4124.8 41.1 Z"></path>
+                    <path d="M4138.1 41.4 L6311.5 100 L6311.5 120 L6311.5 120.0 " fill="none"></path>
+                    <path d="M4138.2 36.1 L4138.1 41.4 L4137.9 46.7 L4124.8 41.0 Z"></path>
+                    <path d="M4138.1 41.3 L6425 100 L6425 120 L6425.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 36.0 L4138.1 41.3 L4137.9 46.7 L4124.8 41.0 Z"></path>
+                    <path d="M4138.1 41.3 L6538 100 L6538 120 L6538.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 35.9 L4138.1 41.3 L4137.9 46.6 L4124.8 40.9 Z"></path>
+                    <path d="M4138.1 41.2 L6648 100 L6648 120 L6648.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 35.9 L4138.1 41.2 L4138.0 46.5 L4124.8 40.9 Z"></path>
+                    <path d="M4138.1 41.1 L6794.5 100 L6794.5 120 L6794.5 120.0 " fill="none"></path>
+                    <path d="M4138.2 35.8 L4138.1 41.1 L4138.0 46.5 L4124.8 40.9 Z"></path>
+                    <path d="M4138.1 41.1 L6947 100 L6947 120 L6947.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 35.8 L4138.1 41.1 L4138.0 46.4 L4124.8 40.8 Z"></path>
+                    <path d="M6896.2 137.8 L5910.25 172 L5910.25 192 L5910.3 192.0 " fill="none"></path>
+                    <path d="M6896.4 143.1 L6896.2 137.8 L6896.0 132.4 L6909.5 137.3 Z"></path>
+                    <path d="M5869.3 230.4 L5844.5 244 L5844.5 264 L5844.5 264.0 " fill="none"></path>
+                    <path d="M5871.9 235.1 L5869.3 230.4 L5866.8 225.7 L5881.0 224.0 Z"></path>
+                    <path d="M5949.8 230.6 L5973.25 244 L5973.25 264 L5973.3 264.0 " fill="none"></path>
+                    <path d="M5952.5 226.0 L5949.8 230.6 L5947.2 235.2 L5938.3 224.0 Z"></path>
+                    <path d="M5973.3 309.3 L5973.25 316 L5973.25 336 L5973.3 336.0 " fill="none"></path>
+                    <path d="M5978.6 309.3 L5973.3 309.3 L5967.9 309.3 L5973.3 296.0 Z"></path>
+                    <path d="M6896.2 139.3 L6397.25 172 L6397.25 192 L6397.3 192.0 " fill="none"></path>
+                    <path d="M6896.5 144.6 L6896.2 139.3 L6895.8 134.0 L6909.5 138.5 Z"></path>
+                    <path d="M6916.9 160.4 L6902.5 172 L6902.5 192 L6902.5 192.0 " fill="none"></path>
+                    <path d="M6920.2 164.5 L6916.9 160.4 L6913.5 156.2 L6927.2 152.0 Z"></path>
+                    <path d="M6997.2 152.1 L7059 172 L7059 192 L7059.0 192.0 " fill="none"></path>
+                    <path d="M6998.8 147.1 L6997.2 152.1 L6995.6 157.2 L6984.5 148.1 Z"></path>
+                    <path d="M6997.7 142.3 L7237.5 172 L7237.5 192 L7237.5 192.0 " fill="none"></path>
+                    <path d="M6998.4 137.0 L6997.7 142.3 L6997.1 147.6 L6984.5 140.6 Z"></path>
+                    <path d="M4138.1 41.0 L7074 100 L7074 120 L7074.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 35.7 L4138.1 41.0 L4138.0 46.4 L4124.8 40.8 Z"></path>
+                    <path d="M4138.1 41.0 L7193 100 L7193 120 L7193.0 120.0 " fill="none"></path>
+                    <path d="M4138.2 35.7 L4138.1 41.0 L4138.0 46.3 L4124.8 40.7 Z"></path>
+                    <g data-name="object">
+                        <g fill="lightgray" stroke="#33322E" data-name="object">
+                            <rect x="4048.0" y="0.0" height="80.0" width="77.0" data-name="object"></rect>
+                            <path d="M4048.0 32.0 L4125.0 32.0" fill="none" data-name="object"></path>
+                        </g>
+                        <g transform="translate(4048, 0)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="object">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="object">
+                                <text x="30.5" y="13.0" stroke="none" text-anchor="middle" data-name="object">object</text>
+
+                            </g>
+                        </g>
+                        <g transform="translate(4048, 32)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="object">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="object">
+                                <text x="0.0" y="13.0" stroke="none" data-name="object">toString()</text>
+                                <text x="0.0" y="29.0" stroke="none" data-name="object">toJSON()</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Buffer">
+                        <g fill="white" stroke="#33322E" data-name="Buffer">
+                            <rect x="0.0" y="120.0" height="32.0" width="55.0" data-name="Buffer"></rect>
+                        </g>
+                        <g transform="translate(0, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Buffer">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Buffer">
+                                <text x="19.5" y="13.0" stroke="none" text-anchor="middle" data-name="Buffer">Buffer</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Cipher">
+                        <g fill="white" stroke="#33322E" data-name="Cipher">
+                            <rect x="95.0" y="120.0" height="32.0" width="59.0" data-name="Cipher"></rect>
+                        </g>
+                        <g transform="translate(95, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Cipher">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Cipher">
+                                <text x="21.5" y="13.0" stroke="none" text-anchor="middle" data-name="Cipher">Cipher</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="DbConnection">
+                        <g fill="white" stroke="#33322E" data-name="DbConnection">
+                            <rect x="194.0" y="120.0" height="32.0" width="109.0" data-name="DbConnection"></rect>
+                        </g>
+                        <g transform="translate(194, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="DbConnection">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DbConnection">
+                                <text x="46.5" y="13.0" stroke="none" text-anchor="middle" data-name="DbConnection">DbConnection</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="MySQL">
+                        <g fill="white" stroke="#33322E" data-name="MySQL">
+                            <rect x="71.0" y="192.0" height="32.0" width="64.0" data-name="MySQL"></rect>
+                        </g>
+                        <g transform="translate(71, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="MySQL">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="MySQL">
+                                <text x="24.0" y="13.0" stroke="none" text-anchor="middle" data-name="MySQL">MySQL</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Odbc">
+                        <g fill="white" stroke="#33322E" data-name="Odbc">
+                            <rect x="175.0" y="192.0" height="32.0" width="51.0" data-name="Odbc"></rect>
+                        </g>
+                        <g transform="translate(175, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Odbc">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Odbc">
+                                <text x="17.5" y="13.0" stroke="none" text-anchor="middle" data-name="Odbc">Odbc</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="SQLite">
+                        <g fill="white" stroke="#33322E" data-name="SQLite">
+                            <rect x="266.0" y="192.0" height="32.0" width="60.0" data-name="SQLite"></rect>
+                        </g>
+                        <g transform="translate(266, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="SQLite">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SQLite">
+                                <text x="22.0" y="13.0" stroke="none" text-anchor="middle" data-name="SQLite">SQLite</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Digest">
+                        <g fill="white" stroke="#33322E" data-name="Digest">
+                            <rect x="379.0" y="120.0" height="32.0" width="58.0" data-name="Digest"></rect>
+                        </g>
+                        <g transform="translate(379, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Digest">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Digest">
+                                <text x="21.0" y="13.0" stroke="none" text-anchor="middle" data-name="Digest">Digest</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="EventEmitter">
+                        <g fill="white" stroke="#33322E" data-name="EventEmitter">
+                            <rect x="751.0" y="120.0" height="32.0" width="99.0" data-name="EventEmitter"></rect>
+                        </g>
+                        <g transform="translate(751, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="EventEmitter">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="EventEmitter">
+                                <text x="41.5" y="13.0" stroke="none" text-anchor="middle" data-name="EventEmitter">EventEmitter</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="ChildProcess">
+                        <g fill="white" stroke="#33322E" data-name="ChildProcess">
+                            <rect x="366.0" y="192.0" height="32.0" width="103.0" data-name="ChildProcess"></rect>
+                        </g>
+                        <g transform="translate(366, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="ChildProcess">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ChildProcess">
+                                <text x="43.5" y="13.0" stroke="none" text-anchor="middle" data-name="ChildProcess">ChildProcess</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="DgramSocket">
+                        <g fill="white" stroke="#33322E" data-name="DgramSocket">
+                            <rect x="509.0" y="192.0" height="32.0" width="104.0" data-name="DgramSocket"></rect>
+                        </g>
+                        <g transform="translate(509, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="DgramSocket">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DgramSocket">
+                                <text x="44.0" y="13.0" stroke="none" text-anchor="middle" data-name="DgramSocket">DgramSocket</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="FSWatcher">
+                        <g fill="white" stroke="#33322E" data-name="FSWatcher">
+                            <rect x="653.0" y="192.0" height="32.0" width="89.0" data-name="FSWatcher"></rect>
+                        </g>
+                        <g transform="translate(653, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="FSWatcher">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="FSWatcher">
+                                <text x="36.5" y="13.0" stroke="none" text-anchor="middle" data-name="FSWatcher">FSWatcher</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="LruCache">
+                        <g fill="white" stroke="#33322E" data-name="LruCache">
+                            <rect x="782.0" y="192.0" height="32.0" width="80.0" data-name="LruCache"></rect>
+                        </g>
+                        <g transform="translate(782, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="LruCache">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="LruCache">
+                                <text x="32.0" y="13.0" stroke="none" text-anchor="middle" data-name="LruCache">LruCache</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Service">
+                        <g fill="white" stroke="#33322E" data-name="Service">
+                            <rect x="902.0" y="192.0" height="32.0" width="65.0" data-name="Service"></rect>
+                        </g>
+                        <g transform="translate(902, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Service">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Service">
+                                <text x="24.5" y="13.0" stroke="none" text-anchor="middle" data-name="Service">Service</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="StatsWatcher">
+                        <g fill="white" stroke="#33322E" data-name="StatsWatcher">
+                            <rect x="1007.0" y="192.0" height="32.0" width="104.0" data-name="StatsWatcher"></rect>
+                        </g>
+                        <g transform="translate(1007, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="StatsWatcher">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="StatsWatcher">
+                                <text x="44.0" y="13.0" stroke="none" text-anchor="middle" data-name="StatsWatcher">StatsWatcher</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="WebSocket">
+                        <g fill="white" stroke="#33322E" data-name="WebSocket">
+                            <rect x="1151.0" y="192.0" height="32.0" width="91.0" data-name="WebSocket"></rect>
+                        </g>
+                        <g transform="translate(1151, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="WebSocket">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WebSocket">
+                                <text x="37.5" y="13.0" stroke="none" text-anchor="middle" data-name="WebSocket">WebSocket</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="WebView">
+                        <g fill="white" stroke="#33322E" data-name="WebView">
+                            <rect x="1282.0" y="192.0" height="32.0" width="77.0" data-name="WebView"></rect>
+                        </g>
+                        <g transform="translate(1282, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="WebView">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WebView">
+                                <text x="30.5" y="13.0" stroke="none" text-anchor="middle" data-name="WebView">WebView</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Worker">
+                        <g fill="white" stroke="#33322E" data-name="Worker">
+                            <rect x="1399.0" y="192.0" height="32.0" width="64.0" data-name="Worker"></rect>
+                        </g>
+                        <g transform="translate(1399, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Worker">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Worker">
+                                <text x="24.0" y="13.0" stroke="none" text-anchor="middle" data-name="Worker">Worker</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Fiber">
+                        <g fill="white" stroke="#33322E" data-name="Fiber">
+                            <rect x="1513.0" y="120.0" height="32.0" width="49.0" data-name="Fiber"></rect>
+                        </g>
+                        <g transform="translate(1513, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Fiber">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Fiber">
+                                <text x="16.5" y="13.0" stroke="none" text-anchor="middle" data-name="Fiber">Fiber</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Handler">
+                        <g fill="white" stroke="#33322E" data-name="Handler">
+                            <rect x="1719.0" y="120.0" height="32.0" width="68.0" data-name="Handler"></rect>
+                        </g>
+                        <g transform="translate(1719, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Handler">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Handler">
+                                <text x="26.0" y="13.0" stroke="none" text-anchor="middle" data-name="Handler">Handler</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Chain">
+                        <g fill="white" stroke="#33322E" data-name="Chain">
+                            <rect x="1503.0" y="192.0" height="32.0" width="54.0" data-name="Chain"></rect>
+                        </g>
+                        <g transform="translate(1503, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Chain">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Chain">
+                                <text x="19.0" y="13.0" stroke="none" text-anchor="middle" data-name="Chain">Chain</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpHandler">
+                        <g fill="white" stroke="#33322E" data-name="HttpHandler">
+                            <rect x="1597.0" y="192.0" height="32.0" width="94.0" data-name="HttpHandler"></rect>
+                        </g>
+                        <g transform="translate(1597, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpHandler">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpHandler">
+                                <text x="39.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpHandler">HttpHandler</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpRepeater">
+                        <g fill="white" stroke="#33322E" data-name="HttpRepeater">
+                            <rect x="1731.0" y="192.0" height="32.0" width="104.0" data-name="HttpRepeater"></rect>
+                        </g>
+                        <g transform="translate(1731, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpRepeater">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpRepeater">
+                                <text x="44.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpRepeater">HttpRepeater</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Routing">
+                        <g fill="white" stroke="#33322E" data-name="Routing">
+                            <rect x="2341.0" y="192.0" height="32.0" width="67.0" data-name="Routing"></rect>
+                        </g>
+                        <g transform="translate(2341, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Routing">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Routing">
+                                <text x="25.5" y="13.0" stroke="none" text-anchor="middle" data-name="Routing">Routing</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="SslHandler">
+                        <g fill="white" stroke="#33322E" data-name="SslHandler">
+                            <rect x="2448.0" y="192.0" height="32.0" width="88.0" data-name="SslHandler"></rect>
+                        </g>
+                        <g transform="translate(2448, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="SslHandler">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SslHandler">
+                                <text x="36.0" y="13.0" stroke="none" text-anchor="middle" data-name="SslHandler">SslHandler</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HeapGraphEdge">
+                        <g fill="white" stroke="#33322E" data-name="HeapGraphEdge">
+                            <rect x="1827.0" y="120.0" height="32.0" width="126.0" data-name="HeapGraphEdge"></rect>
+                        </g>
+                        <g transform="translate(1827, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HeapGraphEdge">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HeapGraphEdge">
+                                <text x="55.0" y="13.0" stroke="none" text-anchor="middle" data-name="HeapGraphEdge">HeapGraphEdge</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HeapGraphNode">
+                        <g fill="white" stroke="#33322E" data-name="HeapGraphNode">
+                            <rect x="1993.0" y="120.0" height="32.0" width="127.0" data-name="HeapGraphNode"></rect>
+                        </g>
+                        <g transform="translate(1993, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HeapGraphNode">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HeapGraphNode">
+                                <text x="55.5" y="13.0" stroke="none" text-anchor="middle" data-name="HeapGraphNode">HeapGraphNode</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HeapSnapshot">
+                        <g fill="white" stroke="#33322E" data-name="HeapSnapshot">
+                            <rect x="2160.0" y="120.0" height="32.0" width="114.0" data-name="HeapSnapshot"></rect>
+                        </g>
+                        <g transform="translate(2160, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HeapSnapshot">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HeapSnapshot">
+                                <text x="49.0" y="13.0" stroke="none" text-anchor="middle" data-name="HeapSnapshot">HeapSnapshot</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpClient">
+                        <g fill="white" stroke="#33322E" data-name="HttpClient">
+                            <rect x="2314.0" y="120.0" height="32.0" width="80.0" data-name="HttpClient"></rect>
+                        </g>
+                        <g transform="translate(2314, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpClient">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpClient">
+                                <text x="32.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpClient">HttpClient</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpCollection">
+                        <g fill="white" stroke="#33322E" data-name="HttpCollection">
+                            <rect x="2434.0" y="120.0" height="32.0" width="108.0" data-name="HttpCollection"></rect>
+                        </g>
+                        <g transform="translate(2434, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpCollection">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpCollection">
+                                <text x="46.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpCollection">HttpCollection</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpCookie">
+                        <g fill="white" stroke="#33322E" data-name="HttpCookie">
+                            <rect x="2582.0" y="120.0" height="32.0" width="89.0" data-name="HttpCookie"></rect>
+                        </g>
+                        <g transform="translate(2582, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpCookie">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpCookie">
+                                <text x="36.5" y="13.0" stroke="none" text-anchor="middle" data-name="HttpCookie">HttpCookie</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpUploadData">
+                        <g fill="white" stroke="#33322E" data-name="HttpUploadData">
+                            <rect x="2711.0" y="120.0" height="32.0" width="120.0" data-name="HttpUploadData"></rect>
+                        </g>
+                        <g transform="translate(2711, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpUploadData">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpUploadData">
+                                <text x="52.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpUploadData">HttpUploadData</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Image">
+                        <g fill="white" stroke="#33322E" data-name="Image">
+                            <rect x="2871.0" y="120.0" height="32.0" width="57.0" data-name="Image"></rect>
+                        </g>
+                        <g transform="translate(2871, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Image">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Image">
+                                <text x="20.5" y="13.0" stroke="none" text-anchor="middle" data-name="Image">Image</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Iterator">
+                        <g fill="white" stroke="#33322E" data-name="Iterator">
+                            <rect x="2968.0" y="120.0" height="32.0" width="64.0" data-name="Iterator"></rect>
+                        </g>
+                        <g transform="translate(2968, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Iterator">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Iterator">
+                                <text x="24.0" y="13.0" stroke="none" text-anchor="middle" data-name="Iterator">Iterator</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="LevelDB">
+                        <g fill="white" stroke="#33322E" data-name="LevelDB">
+                            <rect x="3072.0" y="120.0" height="32.0" width="71.0" data-name="LevelDB"></rect>
+                        </g>
+                        <g transform="translate(3072, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="LevelDB">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="LevelDB">
+                                <text x="27.5" y="13.0" stroke="none" text-anchor="middle" data-name="LevelDB">LevelDB</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Lock">
+                        <g fill="white" stroke="#33322E" data-name="Lock">
+                            <rect x="3183.0" y="120.0" height="32.0" width="48.0" data-name="Lock"></rect>
+                        </g>
+                        <g transform="translate(3183, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Lock">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Lock">
+                                <text x="16.0" y="13.0" stroke="none" text-anchor="middle" data-name="Lock">Lock</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Condition">
+                        <g fill="white" stroke="#33322E" data-name="Condition">
+                            <rect x="2576.0" y="192.0" height="32.0" width="79.0" data-name="Condition"></rect>
+                        </g>
+                        <g transform="translate(2576, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Condition">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Condition">
+                                <text x="31.5" y="13.0" stroke="none" text-anchor="middle" data-name="Condition">Condition</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Event">
+                        <g fill="white" stroke="#33322E" data-name="Event">
+                            <rect x="3052.0" y="192.0" height="32.0" width="54.0" data-name="Event"></rect>
+                        </g>
+                        <g transform="translate(3052, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Event">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Event">
+                                <text x="19.0" y="13.0" stroke="none" text-anchor="middle" data-name="Event">Event</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Semaphore">
+                        <g fill="white" stroke="#33322E" data-name="Semaphore">
+                            <rect x="3328.0" y="192.0" height="32.0" width="92.0" data-name="Semaphore"></rect>
+                        </g>
+                        <g transform="translate(3328, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Semaphore">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Semaphore">
+                                <text x="38.0" y="13.0" stroke="none" text-anchor="middle" data-name="Semaphore">Semaphore</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Message">
+                        <g fill="white" stroke="#33322E" data-name="Message">
+                            <rect x="3473.0" y="120.0" height="32.0" width="76.0" data-name="Message"></rect>
+                        </g>
+                        <g transform="translate(3473, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Message">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Message">
+                                <text x="30.0" y="13.0" stroke="none" text-anchor="middle" data-name="Message">Message</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpMessage">
+                        <g fill="white" stroke="#33322E" data-name="HttpMessage">
+                            <rect x="3460.0" y="192.0" height="32.0" width="103.0" data-name="HttpMessage"></rect>
+                        </g>
+                        <g transform="translate(3460, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpMessage">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpMessage">
+                                <text x="43.5" y="13.0" stroke="none" text-anchor="middle" data-name="HttpMessage">HttpMessage</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpRequest">
+                        <g fill="white" stroke="#33322E" data-name="HttpRequest">
+                            <rect x="3408.0" y="264.0" height="32.0" width="98.0" data-name="HttpRequest"></rect>
+                        </g>
+                        <g transform="translate(3408, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpRequest">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpRequest">
+                                <text x="41.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpRequest">HttpRequest</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpResponse">
+                        <g fill="white" stroke="#33322E" data-name="HttpResponse">
+                            <rect x="4139.0" y="264.0" height="32.0" width="109.0" data-name="HttpResponse"></rect>
+                        </g>
+                        <g transform="translate(4139, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpResponse">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpResponse">
+                                <text x="46.5" y="13.0" stroke="none" text-anchor="middle" data-name="HttpResponse">HttpResponse</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="WebSocketMessage">
+                        <g fill="white" stroke="#33322E" data-name="WebSocketMessage">
+                            <rect x="4149.0" y="192.0" height="32.0" width="151.0" data-name="WebSocketMessage"></rect>
+                        </g>
+                        <g transform="translate(4149, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="WebSocketMessage">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WebSocketMessage">
+                                <text x="67.5" y="13.0" stroke="none" text-anchor="middle" data-name="WebSocketMessage">WebSocketMessage</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="MongoCollection">
+                        <g fill="white" stroke="#33322E" data-name="MongoCollection">
+                            <rect x="3589.0" y="120.0" height="32.0" width="126.0" data-name="MongoCollection"></rect>
+                        </g>
+                        <g transform="translate(3589, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="MongoCollection">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="MongoCollection">
+                                <text x="55.0" y="13.0" stroke="none" text-anchor="middle" data-name="MongoCollection">MongoCollection</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="MongoCursor">
+                        <g fill="white" stroke="#33322E" data-name="MongoCursor">
+                            <rect x="3755.0" y="120.0" height="32.0" width="105.0" data-name="MongoCursor"></rect>
+                        </g>
+                        <g transform="translate(3755, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="MongoCursor">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="MongoCursor">
+                                <text x="44.5" y="13.0" stroke="none" text-anchor="middle" data-name="MongoCursor">MongoCursor</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="MongoDB">
+                        <g fill="white" stroke="#33322E" data-name="MongoDB">
+                            <rect x="3900.0" y="120.0" height="32.0" width="80.0" data-name="MongoDB"></rect>
+                        </g>
+                        <g transform="translate(3900, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="MongoDB">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="MongoDB">
+                                <text x="32.0" y="13.0" stroke="none" text-anchor="middle" data-name="MongoDB">MongoDB</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="MongoID">
+                        <g fill="white" stroke="#33322E" data-name="MongoID">
+                            <rect x="4020.0" y="120.0" height="32.0" width="75.0" data-name="MongoID"></rect>
+                        </g>
+                        <g transform="translate(4020, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="MongoID">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="MongoID">
+                                <text x="29.5" y="13.0" stroke="none" text-anchor="middle" data-name="MongoID">MongoID</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="PKey">
+                        <g fill="white" stroke="#33322E" data-name="PKey">
+                            <rect x="4135.0" y="120.0" height="32.0" width="50.0" data-name="PKey"></rect>
+                        </g>
+                        <g transform="translate(4135, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="PKey">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PKey">
+                                <text x="17.0" y="13.0" stroke="none" text-anchor="middle" data-name="PKey">PKey</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Redis">
+                        <g fill="white" stroke="#33322E" data-name="Redis">
+                            <rect x="4225.0" y="120.0" height="32.0" width="54.0" data-name="Redis"></rect>
+                        </g>
+                        <g transform="translate(4225, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Redis">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Redis">
+                                <text x="19.0" y="13.0" stroke="none" text-anchor="middle" data-name="Redis">Redis</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="RedisHash">
+                        <g fill="white" stroke="#33322E" data-name="RedisHash">
+                            <rect x="4319.0" y="120.0" height="32.0" width="88.0" data-name="RedisHash"></rect>
+                        </g>
+                        <g transform="translate(4319, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="RedisHash">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RedisHash">
+                                <text x="36.0" y="13.0" stroke="none" text-anchor="middle" data-name="RedisHash">RedisHash</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="RedisList">
+                        <g fill="white" stroke="#33322E" data-name="RedisList">
+                            <rect x="4447.0" y="120.0" height="32.0" width="77.0" data-name="RedisList"></rect>
+                        </g>
+                        <g transform="translate(4447, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="RedisList">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RedisList">
+                                <text x="30.5" y="13.0" stroke="none" text-anchor="middle" data-name="RedisList">RedisList</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="RedisSet">
+                        <g fill="white" stroke="#33322E" data-name="RedisSet">
+                            <rect x="4564.0" y="120.0" height="32.0" width="75.0" data-name="RedisSet"></rect>
+                        </g>
+                        <g transform="translate(4564, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="RedisSet">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RedisSet">
+                                <text x="29.5" y="13.0" stroke="none" text-anchor="middle" data-name="RedisSet">RedisSet</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="RedisSortedSet">
+                        <g fill="white" stroke="#33322E" data-name="RedisSortedSet">
+                            <rect x="4679.0" y="120.0" height="32.0" width="119.0" data-name="RedisSortedSet"></rect>
+                        </g>
+                        <g transform="translate(4679, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="RedisSortedSet">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RedisSortedSet">
+                                <text x="51.5" y="13.0" stroke="none" text-anchor="middle" data-name="RedisSortedSet">RedisSortedSet</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="SandBox">
+                        <g fill="white" stroke="#33322E" data-name="SandBox">
+                            <rect x="4838.0" y="120.0" height="32.0" width="75.0" data-name="SandBox"></rect>
+                        </g>
+                        <g transform="translate(4838, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="SandBox">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SandBox">
+                                <text x="29.5" y="13.0" stroke="none" text-anchor="middle" data-name="SandBox">SandBox</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Smtp">
+                        <g fill="white" stroke="#33322E" data-name="Smtp">
+                            <rect x="4953.0" y="120.0" height="32.0" width="49.0" data-name="Smtp"></rect>
+                        </g>
+                        <g transform="translate(4953, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Smtp">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Smtp">
+                                <text x="16.5" y="13.0" stroke="none" text-anchor="middle" data-name="Smtp">Smtp</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Stat">
+                        <g fill="white" stroke="#33322E" data-name="Stat">
+                            <rect x="5042.0" y="120.0" height="32.0" width="42.0" data-name="Stat"></rect>
+                        </g>
+                        <g transform="translate(5042, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Stat">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Stat">
+                                <text x="13.0" y="13.0" stroke="none" text-anchor="middle" data-name="Stat">Stat</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Stream">
+                        <g fill="white" stroke="#33322E" data-name="Stream">
+                            <rect x="5124.0" y="120.0" height="32.0" width="63.0" data-name="Stream"></rect>
+                        </g>
+                        <g transform="translate(5124, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Stream">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Stream">
+                                <text x="23.5" y="13.0" stroke="none" text-anchor="middle" data-name="Stream">Stream</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="BufferedStream">
+                        <g fill="white" stroke="#33322E" data-name="BufferedStream">
+                            <rect x="4340.0" y="192.0" height="32.0" width="119.0" data-name="BufferedStream"></rect>
+                        </g>
+                        <g transform="translate(4340, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="BufferedStream">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="BufferedStream">
+                                <text x="51.5" y="13.0" stroke="none" text-anchor="middle" data-name="BufferedStream">BufferedStream</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="SeekableStream">
+                        <g fill="white" stroke="#33322E" data-name="SeekableStream">
+                            <rect x="4499.0" y="192.0" height="32.0" width="124.0" data-name="SeekableStream"></rect>
+                        </g>
+                        <g transform="translate(4499, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="SeekableStream">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SeekableStream">
+                                <text x="54.0" y="13.0" stroke="none" text-anchor="middle" data-name="SeekableStream">SeekableStream</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="File">
+                        <g fill="white" stroke="#33322E" data-name="File">
+                            <rect x="4288.0" y="264.0" height="32.0" width="39.0" data-name="File"></rect>
+                        </g>
+                        <g transform="translate(4288, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="File">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="File">
+                                <text x="11.5" y="13.0" stroke="none" text-anchor="middle" data-name="File">File</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="MemoryStream">
+                        <g fill="white" stroke="#33322E" data-name="MemoryStream">
+                            <rect x="4367.0" y="264.0" height="32.0" width="115.0" data-name="MemoryStream"></rect>
+                        </g>
+                        <g transform="translate(4367, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="MemoryStream">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="MemoryStream">
+                                <text x="49.5" y="13.0" stroke="none" text-anchor="middle" data-name="MemoryStream">MemoryStream</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="RangeStream">
+                        <g fill="white" stroke="#33322E" data-name="RangeStream">
+                            <rect x="4789.0" y="264.0" height="32.0" width="106.0" data-name="RangeStream"></rect>
+                        </g>
+                        <g transform="translate(4789, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="RangeStream">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RangeStream">
+                                <text x="45.0" y="13.0" stroke="none" text-anchor="middle" data-name="RangeStream">RangeStream</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Socket">
+                        <g fill="white" stroke="#33322E" data-name="Socket">
+                            <rect x="4663.0" y="192.0" height="32.0" width="61.0" data-name="Socket"></rect>
+                        </g>
+                        <g transform="translate(4663, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Socket">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Socket">
+                                <text x="22.5" y="13.0" stroke="none" text-anchor="middle" data-name="Socket">Socket</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="SslSocket">
+                        <g fill="white" stroke="#33322E" data-name="SslSocket">
+                            <rect x="5097.0" y="192.0" height="32.0" width="81.0" data-name="SslSocket"></rect>
+                        </g>
+                        <g transform="translate(5097, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="SslSocket">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SslSocket">
+                                <text x="32.5" y="13.0" stroke="none" text-anchor="middle" data-name="SslSocket">SslSocket</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="TTYInputStream">
+                        <g fill="white" stroke="#33322E" data-name="TTYInputStream">
+                            <rect x="5218.0" y="192.0" height="32.0" width="122.0" data-name="TTYInputStream"></rect>
+                        </g>
+                        <g transform="translate(5218, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="TTYInputStream">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TTYInputStream">
+                                <text x="53.0" y="13.0" stroke="none" text-anchor="middle" data-name="TTYInputStream">TTYInputStream</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="TTYOutputStream">
+                        <g fill="white" stroke="#33322E" data-name="TTYOutputStream">
+                            <rect x="5424.0" y="192.0" height="32.0" width="133.0" data-name="TTYOutputStream"></rect>
+                        </g>
+                        <g transform="translate(5424, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="TTYOutputStream">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TTYOutputStream">
+                                <text x="58.5" y="13.0" stroke="none" text-anchor="middle" data-name="TTYOutputStream">TTYOutputStream</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="StringDecoder">
+                        <g fill="white" stroke="#33322E" data-name="StringDecoder">
+                            <rect x="5505.0" y="120.0" height="32.0" width="110.0" data-name="StringDecoder"></rect>
+                        </g>
+                        <g transform="translate(5505, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="StringDecoder">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="StringDecoder">
+                                <text x="47.0" y="13.0" stroke="none" text-anchor="middle" data-name="StringDecoder">StringDecoder</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="TcpServer">
+                        <g fill="white" stroke="#33322E" data-name="TcpServer">
+                            <rect x="5660.0" y="120.0" height="32.0" width="84.0" data-name="TcpServer"></rect>
+                        </g>
+                        <g transform="translate(5660, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="TcpServer">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TcpServer">
+                                <text x="34.0" y="13.0" stroke="none" text-anchor="middle" data-name="TcpServer">TcpServer</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpServer">
+                        <g fill="white" stroke="#33322E" data-name="HttpServer">
+                            <rect x="5597.0" y="192.0" height="32.0" width="86.0" data-name="HttpServer"></rect>
+                        </g>
+                        <g transform="translate(5597, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpServer">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpServer">
+                                <text x="35.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpServer">HttpServer</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="HttpsServer">
+                        <g fill="white" stroke="#33322E" data-name="HttpsServer">
+                            <rect x="5593.0" y="264.0" height="32.0" width="94.0" data-name="HttpsServer"></rect>
+                        </g>
+                        <g transform="translate(5593, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="HttpsServer">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpsServer">
+                                <text x="39.0" y="13.0" stroke="none" text-anchor="middle" data-name="HttpsServer">HttpsServer</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="SslServer">
+                        <g fill="white" stroke="#33322E" data-name="SslServer">
+                            <rect x="5723.0" y="192.0" height="32.0" width="79.0" data-name="SslServer"></rect>
+                        </g>
+                        <g transform="translate(5723, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="SslServer">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SslServer">
+                                <text x="31.5" y="13.0" stroke="none" text-anchor="middle" data-name="SslServer">SslServer</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="TextDecoder">
+                        <g fill="white" stroke="#33322E" data-name="TextDecoder">
+                            <rect x="5784.0" y="120.0" height="32.0" width="100.0" data-name="TextDecoder"></rect>
+                        </g>
+                        <g transform="translate(5784, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="TextDecoder">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TextDecoder">
+                                <text x="42.0" y="13.0" stroke="none" text-anchor="middle" data-name="TextDecoder">TextDecoder</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="TextEncoder">
+                        <g fill="white" stroke="#33322E" data-name="TextEncoder">
+                            <rect x="5924.0" y="120.0" height="32.0" width="99.0" data-name="TextEncoder"></rect>
+                        </g>
+                        <g transform="translate(5924, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="TextEncoder">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TextEncoder">
+                                <text x="41.5" y="13.0" stroke="none" text-anchor="middle" data-name="TextEncoder">TextEncoder</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Timer">
+                        <g fill="white" stroke="#33322E" data-name="Timer">
+                            <rect x="6063.0" y="120.0" height="32.0" width="53.0" data-name="Timer"></rect>
+                        </g>
+                        <g transform="translate(6063, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="Timer">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Timer">
+                                <text x="18.5" y="13.0" stroke="none" text-anchor="middle" data-name="Timer">Timer</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="UrlObject">
+                        <g fill="white" stroke="#33322E" data-name="UrlObject">
+                            <rect x="6156.0" y="120.0" height="32.0" width="77.0" data-name="UrlObject"></rect>
+                        </g>
+                        <g transform="translate(6156, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="UrlObject">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UrlObject">
+                                <text x="30.5" y="13.0" stroke="none" text-anchor="middle" data-name="UrlObject">UrlObject</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="X509Cert">
+                        <g fill="white" stroke="#33322E" data-name="X509Cert">
+                            <rect x="6273.0" y="120.0" height="32.0" width="78.0" data-name="X509Cert"></rect>
+                        </g>
+                        <g transform="translate(6273, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="X509Cert">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="X509Cert">
+                                <text x="31.0" y="13.0" stroke="none" text-anchor="middle" data-name="X509Cert">X509Cert</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="X509Crl">
+                        <g fill="white" stroke="#33322E" data-name="X509Crl">
+                            <rect x="6391.0" y="120.0" height="32.0" width="69.0" data-name="X509Crl"></rect>
+                        </g>
+                        <g transform="translate(6391, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="X509Crl">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="X509Crl">
+                                <text x="26.5" y="13.0" stroke="none" text-anchor="middle" data-name="X509Crl">X509Crl</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="X509Req">
+                        <g fill="white" stroke="#33322E" data-name="X509Req">
+                            <rect x="6500.0" y="120.0" height="32.0" width="77.0" data-name="X509Req"></rect>
+                        </g>
+                        <g transform="translate(6500, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="X509Req">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="X509Req">
+                                <text x="30.5" y="13.0" stroke="none" text-anchor="middle" data-name="X509Req">X509Req</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlAttr">
+                        <g fill="white" stroke="#33322E" data-name="XmlAttr">
+                            <rect x="6617.0" y="120.0" height="32.0" width="63.0" data-name="XmlAttr"></rect>
+                        </g>
+                        <g transform="translate(6617, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlAttr">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlAttr">
+                                <text x="23.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlAttr">XmlAttr</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlNamedNodeMap">
+                        <g fill="white" stroke="#33322E" data-name="XmlNamedNodeMap">
+                            <rect x="6720.0" y="120.0" height="32.0" width="150.0" data-name="XmlNamedNodeMap"></rect>
+                        </g>
+                        <g transform="translate(6720, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlNamedNodeMap">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlNamedNodeMap">
+                                <text x="67.0" y="13.0" stroke="none" text-anchor="middle" data-name="XmlNamedNodeMap">XmlNamedNodeMap</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlNode">
+                        <g fill="white" stroke="#33322E" data-name="XmlNode">
+                            <rect x="6910.0" y="120.0" height="32.0" width="75.0" data-name="XmlNode"></rect>
+                        </g>
+                        <g transform="translate(6910, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlNode">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlNode">
+                                <text x="29.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlNode">XmlNode</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlCharacterData">
+                        <g fill="white" stroke="#33322E" data-name="XmlCharacterData">
+                            <rect x="5842.0" y="192.0" height="32.0" width="136.0" data-name="XmlCharacterData"></rect>
+                        </g>
+                        <g transform="translate(5842, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlCharacterData">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlCharacterData">
+                                <text x="60.0" y="13.0" stroke="none" text-anchor="middle" data-name="XmlCharacterData">XmlCharacterData</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlComment">
+                        <g fill="white" stroke="#33322E" data-name="XmlComment">
+                            <rect x="5793.0" y="264.0" height="32.0" width="103.0" data-name="XmlComment"></rect>
+                        </g>
+                        <g transform="translate(5793, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlComment">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlComment">
+                                <text x="43.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlComment">XmlComment</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlText">
+                        <g fill="white" stroke="#33322E" data-name="XmlText">
+                            <rect x="5939.0" y="264.0" height="32.0" width="69.0" data-name="XmlText"></rect>
+                        </g>
+                        <g transform="translate(5939, 264)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlText">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlText">
+                                <text x="26.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlText">XmlText</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlCDATASection">
+                        <g fill="white" stroke="#33322E" data-name="XmlCDATASection">
+                            <rect x="5905.0" y="336.0" height="32.0" width="136.0" data-name="XmlCDATASection"></rect>
+                        </g>
+                        <g transform="translate(5905, 336)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlCDATASection">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlCDATASection">
+                                <text x="60.0" y="13.0" stroke="none" text-anchor="middle" data-name="XmlCDATASection">XmlCDATASection</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlDocument">
+                        <g fill="white" stroke="#33322E" data-name="XmlDocument">
+                            <rect x="6344.0" y="192.0" height="32.0" width="107.0" data-name="XmlDocument"></rect>
+                        </g>
+                        <g transform="translate(6344, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlDocument">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlDocument">
+                                <text x="45.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlDocument">XmlDocument</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlDocumentType">
+                        <g fill="white" stroke="#33322E" data-name="XmlDocumentType">
+                            <rect x="6833.0" y="192.0" height="32.0" width="139.0" data-name="XmlDocumentType"></rect>
+                        </g>
+                        <g transform="translate(6833, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlDocumentType">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlDocumentType">
+                                <text x="61.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlDocumentType">XmlDocumentType</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlElement">
+                        <g fill="white" stroke="#33322E" data-name="XmlElement">
+                            <rect x="7012.0" y="192.0" height="32.0" width="94.0" data-name="XmlElement"></rect>
+                        </g>
+                        <g transform="translate(7012, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlElement">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlElement">
+                                <text x="39.0" y="13.0" stroke="none" text-anchor="middle" data-name="XmlElement">XmlElement</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlProcessingInstruction">
+                        <g fill="white" stroke="#33322E" data-name="XmlProcessingInstruction">
+                            <rect x="7146.0" y="192.0" height="32.0" width="183.0" data-name="XmlProcessingInstruction"></rect>
+                        </g>
+                        <g transform="translate(7146, 192)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlProcessingInstruction">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlProcessingInstruction">
+                                <text x="83.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlProcessingInstruction">XmlProcessingInstruction</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="XmlNodeList">
+                        <g fill="white" stroke="#33322E" data-name="XmlNodeList">
+                            <rect x="7025.0" y="120.0" height="32.0" width="99.0" data-name="XmlNodeList"></rect>
+                        </g>
+                        <g transform="translate(7025, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="XmlNodeList">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="XmlNodeList">
+                                <text x="41.5" y="13.0" stroke="none" text-anchor="middle" data-name="XmlNodeList">XmlNodeList</text>
+
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="ZipFile">
+                        <g fill="white" stroke="#33322E" data-name="ZipFile">
+                            <rect x="7164.0" y="120.0" height="32.0" width="59.0" data-name="ZipFile"></rect>
+                        </g>
+                        <g transform="translate(7164, 120)" font-family="Helvetica,sans-Serif" font-size="10pt" font-weight="normal" font-style="normal" data-name="ZipFile">
+                            <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ZipFile">
+                                <text x="21.5" y="13.0" stroke="none" text-anchor="middle" data-name="ZipFile">ZipFile</text>
+
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></div>
+
+<div name="成员函数" data-unique="成员函数"></div><h2 id="成员函数"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">función miembro</font></font></h2>
+<div name="toString" data-unique="toString"></div><h3 id="toString" class="notranslate">toString</h3>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Devuelve la representación de cadena del objeto, generalmente devuelve "[Objeto nativo]", el objeto se puede volver a implementar de acuerdo con sus propias características</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div><span class="hljs-built_in">String</span> object.toString();
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Resultado devuelto:</font></font></p>
+<ul>
+<li><span class="notranslate">String</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, devuelve la representación de cadena del objeto</font></font></li>
+</ul>
+<hr>
+<div name="toJSON" data-unique="toJSON"></div><h3 id="toJSON" class="notranslate">toJSON</h3>
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Devuelve la representación en formato JSON del objeto, generalmente devuelve el conjunto de propiedades legibles definidas por el objeto</font></font></strong></p>
+<pre><code class="lang-JavaScript"><div class="line-numbers">1</div>Value object.toJSON(<span class="hljs-built_in">String</span> key = <span class="hljs-string">""</span>);
+</code></pre>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parámetros de llamada:</font></font></p>
+<ul>
+<li><span class="notranslate">key</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: Cadena, sin usar</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Resultado devuelto:</font></font></p>
+<ul>
+<li><span class="notranslate">Value</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, devuelve un valor que contiene JSON serializable</font></font></li>
+</ul>
+ </div><div class="sidebar hidden-sm hidden-xs hidden-md"><div id="toc" class="tocify"></div></div></div></div><div class="footer"><div class="container"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© Copyright 2012-2021 fibjs.org | </font></font><a href="../../../../support.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apóyanos</font></font></a></div></div><a id="back-to-top" href="#" class="btn btn-default btn-lg back-to-top" role="button" title="" data-toggle="tooltip" data-placement="left" data-original-title="Click to return on the top page" aria-describedby="tooltip217526"><span class="glyphicon glyphicon-chevron-up"></span></a><div class="tooltip fade left in" role="tooltip" id="tooltip217526" style="top: 0px; left: -190px; display: block;"><div class="tooltip-arrow" style="top: 0%;"></div><div class="tooltip-inner"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Haga clic para volver a la página superior</font></font></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script><script type="text/javascript" src="../../../../../js/common.js"></script><script type="text/javascript" src="../../../../../js/docs.js"></script></body></html>

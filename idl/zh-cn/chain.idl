@@ -1,0 +1,22 @@
+module chain : EventEmitter
+{
+    static String name;
+    
+    static String data_dir;
+
+    static String config_dir;
+
+    static String log_level;
+
+    static String pubkey_prefix;
+
+    static load(String name, Object cfg = {});
+
+    static load(Object cfgs);
+
+    static start();
+
+    static stop();
+    
+    static String post(String resource, String body = "") async;
+};

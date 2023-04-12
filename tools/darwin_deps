@@ -1,0 +1,9 @@
+cmake,bin/cmake
+ccache,bin/ccache
+git,bin/git
+boost,include/boost
+gmp,include/gmp.h
+zstd,include/zstd.h
+openssl,opt/openssl
+libusb,lib/libusb-1.0.0.dylib
+pkgconfig,bin/pkg-config

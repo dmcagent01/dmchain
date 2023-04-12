@@ -1,0 +1,6 @@
+FROM dockcross/linux-arm64-musl
+
+LABEL AUTHOR="xicilion"
+LABEL AUTHOR_EMAIL="lion@9465.net"
+
+RUN adduser fibjs -q

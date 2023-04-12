@@ -1,0 +1,3 @@
+cmake,bin/cmake
+ccache,bin/ccache
+git,bin/git
